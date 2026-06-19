@@ -2,7 +2,7 @@
 
 /* Developer */
 Name: Malik Taleeb Shahbaz
-Website: https://taleeb-portfolio.vercel.app/
+Website: https://taleeb-shahbaz.vercel.app/
 GitHub: https://github.com/mtaleebshahbaz
 Location: Pakistan
 
