@@ -127,11 +127,12 @@ def render_page(article):
     <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <ul class="nav-links" id="nav-links">
       <li><a href="../index.html">Home</a></li>
-      <li><a href="../index.html#about">About</a></li>
-      <li><a href="../index.html#services">Services</a></li>
-      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../services.html">Services</a></li>
+      <li><a href="../projects.html">Projects</a></li>
       <li><a href="./">Blog</a></li>
-      <li><a href="../index.html#contact" class="nav-cta">Hire Me</a></li>
+      <li><a href="../index.html#process">Process</a></li>
+      <li><a href="../contact.html" class="nav-cta">Hire Me</a></li>
     </ul>
   </nav>
 
@@ -156,7 +157,7 @@ def render_page(article):
     <footer class="article-conclusion reveal">
       <h2>Need Help Building Your Website?</h2>
       <p>{article.get("cta_text", "If this raised questions about your project, message me. I'll give you a straight answer on scope, timeline, and cost. No pressure.")}</p>
-      <p><a href="../index.html#contact" class="btn btn-primary">Start a Conversation</a> &nbsp; <a href="{WHATSAPP}" class="btn btn-glass" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
+      <p><a href="../contact.html" class="btn btn-primary">Start a Conversation</a> &nbsp; <a href="{WHATSAPP}" class="btn btn-glass" target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
     </footer>
   </article>
 
@@ -165,9 +166,9 @@ def render_page(article):
       <div class="footer-col">
         <h4>Services</h4>
         <ul>
-          <li><a href="../index.html#service-custom-website">Custom Website Development</a></li>
-          <li><a href="../index.html#service-saas">SaaS Development</a></li>
-          <li><a href="../index.html#service-seo">SEO Website Development</a></li>
+          <li><a href="../services.html#service-custom-website">Custom Website Development</a></li>
+          <li><a href="../services.html#service-saas">SaaS Development</a></li>
+          <li><a href="../services.html#service-seo">SEO Website Development</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -181,7 +182,7 @@ def render_page(article):
         <ul>
           <li><a href="{LINKEDIN}" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="{WHATSAPP}" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-          <li><a href="../index.html#projects">Portfolio</a></li>
+          <li><a href="../projects.html">Portfolio</a></li>
         </ul>
       </div>
     </div>

@@ -8,7 +8,7 @@ ARTICLE = {
     "headline": "7 Benefits of Custom Website Development vs Templates (2026 Guide)",
     "tag": "Web Development",
     "card_description": "Custom website vs WordPress templates: speed, SEO, branding, and scalability with examples from real client projects.",
-    "lead": "Most business owners start with a template because it feels cheaper and faster. That is often true for week one. Six months later, many call a developer because custom website development benefits — speed, SEO, and unique branding — outweigh template savings. This guide explains what I see on real projects, and when a template still makes sense. See <a href=\"../index.html#service-custom-website\">custom website services</a> on my homepage.",
+    "lead": "Most business owners start with a template because it feels cheaper and faster. That is often true for week one. Six months later, many call a developer because custom website development benefits — speed, SEO, and unique branding — outweigh template savings. This guide explains what I see on real projects, and when a template still makes sense. See <a href=\"../services.html#service-custom-website\">custom website services</a> on my homepage.",
     "reading_time": "14 min read",
     "word_count": 2850,
     "keywords": "custom website development benefits, custom vs WordPress, bespoke web development, template website disadvantages, custom business website",
@@ -16,11 +16,11 @@ ARTICLE = {
     "date_published": "2025-06-01",
     "related_links": """
           <li><a href="../index.html">Homepage</a></li>
-          <li><a href="../index.html#service-custom-website">Custom Website Development Services</a></li>
+          <li><a href="../services.html#service-custom-website">Custom Website Development Services</a></li>
           <li><a href="why-every-business-needs-modern-website.html">Why Every Business Needs a Modern Website</a></li>
           <li><a href="lead-generation-website-tips.html">Lead Generation Website Tips</a></li>
           <li><a href="seo-best-practices-business-websites.html">SEO Best Practices for Business Websites</a></li>""",
-    "cta_text": "If you are weighing a template against a custom build, I can review your goals and give you an honest recommendation — including cases where a template is the right call. <a href=\"../index.html#contact\">Contact me</a> or <a href=\"../index.html#service-custom-website\">view custom website services</a> on my homepage.",
+    "cta_text": "If you are weighing a template against a custom build, I can review your goals and give you an honest recommendation — including cases where a template is the right call. <a href=\"../contact.html\">Contact me</a> or <a href=\"../services.html#service-custom-website\">view custom website services</a> on my homepage.",
     "body_html": """
     <section class="quick-answer reveal">
       <h2>Quick answer</h2>
@@ -34,7 +34,7 @@ ARTICLE = {
         <li>Performance gaps between template sites and hand-coded pages are measurable — and they affect Google rankings and lead form completion rates.</li>
         <li>Custom development does not always mean expensive; it means intentional — every section serves a business goal.</li>
         <li>WordPress with heavy plugins can cost more to maintain annually than a static or Jamstack custom site.</li>
-        <li>Real project work — like the <a href="../index.html#projects">Azul Driving School site</a> — shows how custom structure supports local discovery and trust.</li>
+        <li>Real project work — like the <a href="../projects.html">Azul Driving School site</a> — shows how custom structure supports local discovery and trust.</li>
         <li>If lead generation matters, pair custom architecture with the conversion patterns in my <a href="lead-generation-website-tips.html">lead generation guide</a>.</li>
       </ul>
     </section>
@@ -133,7 +133,7 @@ ARTICLE = {
       <h2>Benefit 1: Brand identity that clients remember</h2>
       <p>First impressions online are visual and instant. Template themes are sold hundreds or thousands of times. Your competitor may be using the same homepage layout with different stock photos. Customers might not articulate that — but they feel it. The site does not feel <em>specific</em>.</p>
       <p>Custom development lets you translate brand attributes into layout decisions. A driving school needs clarity and trust, not flashy animation. A college with multiple campuses needs structured navigation that helps parents find the right location without calling the front desk. A creative professional needs a portfolio that demonstrates craft, not a grid that looks like every other freelancer theme.</p>
-      <p>On the <a href="../index.html#projects">Peace College website</a>, the structure had to reflect real-world parent behavior: compare campuses, scan programs, then contact admissions. A generic education theme would have forced that logic into demo sections named "Team" and "Gallery." Custom structure put campus information where parents actually looked for it.</p>
+      <p>On the <a href="../projects.html">Peace College website</a>, the structure had to reflect real-world parent behavior: compare campuses, scan programs, then contact admissions. A generic education theme would have forced that logic into demo sections named "Team" and "Gallery." Custom structure put campus information where parents actually looked for it.</p>
 
       <aside class="expert-insight">
         <p>I tell clients: your website is not a mood board. It is a sequence of decisions that either reduce or increase friction. Templates optimize for looking good in a marketplace screenshot. Custom work optimizes for how your customer decides.</p>
@@ -245,7 +245,7 @@ ARTICLE = {
 
     <section class="article-section reveal" id="real-projects">
       <h2>What this looks like on real projects</h2>
-      <p>Abstract comparisons only go so far. Here is how custom website development benefits show up in work from my <a href="../index.html#projects">portfolio</a>.</p>
+      <p>Abstract comparisons only go so far. Here is how custom website development benefits show up in work from my <a href="../projects.html">portfolio</a>.</p>
       <h3>Azul Driving School</h3>
       <p>The client needed local credibility and mobile discovery. A template driving-school theme existed, but demos looked American-centric and cluttered. We built a clean custom site with course clarity, fast loads, and contact paths tuned for mobile users. The business impact was not a viral campaign — it was showing up professionally when students compared options on their phones.</p>
       <h3>The Peace College</h3>
@@ -275,7 +275,7 @@ ARTICLE = {
     <section class="article-section reveal" id="choosing-developer">
       <h2>How to choose a custom website developer</h2>
       <p>If you decide on custom development, vendor selection matters as much as the decision itself. Look for proof in similar industries, clear milestones, readable contracts, and code ownership. Ask how they handle hosting, analytics, forms, and post-launch changes. Ask what happens if you want a new landing page in six months.</p>
-      <p>Review portfolios for outcomes, not animation count. Case studies should mention business problems — slow site, weak inquiries, confusing navigation — not only list technologies. My <a href="../index.html#service-custom-website">custom website development service</a> page outlines how I run discovery, builds, and launches for clients in education, automotive services, and professional services.</p>
+      <p>Review portfolios for outcomes, not animation count. Case studies should mention business problems — slow site, weak inquiries, confusing navigation — not only list technologies. My <a href="../services.html#service-custom-website">custom website development service</a> page outlines how I run discovery, builds, and launches for clients in education, automotive services, and professional services.</p>
       <p>Red flags: vague fixed prices before scope clarity, no mention of performance or SEO structure, recycled template demos presented as custom, or no plan for analytics and conversion tracking. Custom development should include thinking, not just coding.</p>
 
       <aside class="expert-insight">

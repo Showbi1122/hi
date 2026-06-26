@@ -57,7 +57,7 @@ META = {
         "date_published": "2025-06-01",
         "related_links": """
           <li><a href="seo-best-practices-business-websites.html">SEO best practices</a></li>
-          <li><a href="../index.html#service-ai">AI website development</a></li>
+          <li><a href="../services.html#service-ai">AI website development</a></li>
           <li><a href="saas-development-guide.html">SaaS development guide</a></li>""",
     },
     "seo-best-practices-business-websites": {
@@ -66,7 +66,7 @@ META = {
         "word_count": 2810,
         "date_published": "2025-06-01",
         "related_links": """
-          <li><a href="../index.html#service-seo">SEO website development</a></li>
+          <li><a href="../services.html#service-seo">SEO website development</a></li>
           <li><a href="../geo/seo-website-developer-pakistan.html">SEO developer Pakistan</a></li>
           <li><a href="react-vs-nextjs.html">React vs Next.js</a></li>""",
     },
@@ -76,7 +76,7 @@ META = {
         "word_count": 3006,
         "date_published": "2025-06-01",
         "related_links": """
-          <li><a href="../index.html#service-saas">SaaS development services</a></li>
+          <li><a href="../services.html#service-saas">SaaS development services</a></li>
           <li><a href="../geo/saas-developer-australia.html">SaaS developer Australia</a></li>
           <li><a href="react-vs-nextjs.html">React vs Next.js</a></li>""",
     },
@@ -86,7 +86,7 @@ META = {
         "word_count": 2800,
         "date_published": "2025-06-01",
         "related_links": """
-          <li><a href="../index.html#service-landing">Landing page development</a></li>
+          <li><a href="../services.html#service-landing">Landing page development</a></li>
           <li><a href="benefits-custom-website-development.html">Custom website benefits</a></li>
           <li><a href="../index.html#projects">Portfolio</a></li>""",
     },
