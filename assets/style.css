@@ -1016,7 +1016,6 @@ section { padding: 88px 0 0; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s var(--ease);
 }
 
 .project-thumb-overlay {
@@ -1024,15 +1023,6 @@ section { padding: 88px 0 0; }
   inset: 0;
   background: linear-gradient(180deg, transparent 40%, rgba(5,5,8,0.85) 100%);
   opacity: 0.7;
-  transition: opacity var(--transition);
-}
-
-.premium-card.project-card:hover .project-thumb img {
-  transform: scale(1.08);
-}
-
-.premium-card.project-card:hover .project-thumb-overlay {
-  opacity: 0.5;
 }
 
 .project-body {
@@ -1391,11 +1381,6 @@ section { padding: 88px 0 0; }
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.tilt-card {
-  transform-style: preserve-3d;
-  will-change: transform;
 }
 
 /* ── Responsive ── */

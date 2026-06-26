@@ -66,30 +66,6 @@
     }, { threshold: 0.1 }).observe(el);
   });
 
-  document.querySelectorAll(".tilt-card").forEach(function (card) {
-    card.addEventListener("mousemove", function (e) {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const cx = rect.width / 2;
-      const cy = rect.height / 2;
-      const rotateX = ((y - cy) / cy) * -6;
-      const rotateY = ((x - cx) / cx) * 6;
-
-      card.style.transform = "perspective(800px) rotateX(" + rotateX + "deg) rotateY(" + rotateY + "deg) translateY(-6px)";
-
-      const glow = card.querySelector(".card-glow");
-      if (glow) {
-        glow.style.setProperty("--mx", (x / rect.width) * 100 + "%");
-        glow.style.setProperty("--my", (y / rect.height) * 100 + "%");
-      }
-    });
-
-    card.addEventListener("mouseleave", function () {
-      card.style.transform = "";
-    });
-  });
-
   document.querySelectorAll(".view-project[data-modal]").forEach(function (btn) {
     btn.addEventListener("click", function (e) {
       e.preventDefault();
@@ -100,10 +76,6 @@
 
   function closeModal(modal) {
     modal.style.display = "none";
-    modal.querySelectorAll("video").forEach(function (video) {
-      video.pause();
-      video.currentTime = 0;
-    });
   }
 
   document.querySelectorAll(".close-modal").forEach(function (btn) {
@@ -117,29 +89,6 @@
     modal.addEventListener("click", function (e) {
       if (e.target === modal) closeModal(modal);
     });
-
-    let currentIndex = 0;
-    const slides = modal.querySelectorAll(".slide");
-    const prevBtn = modal.querySelector(".prev");
-    const nextBtn = modal.querySelector(".next");
-
-    function showSlide(index) {
-      slides.forEach(function (s, i) { s.classList.toggle("active", i === index); });
-    }
-
-    if (prevBtn && nextBtn && slides.length) {
-      prevBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(currentIndex);
-      });
-      nextBtn.addEventListener("click", function (e) {
-        e.stopPropagation();
-        currentIndex = (currentIndex + 1) % slides.length;
-        showSlide(currentIndex);
-      });
-      showSlide(0);
-    }
   });
 
   document.addEventListener("keydown", function (e) {
@@ -212,21 +161,6 @@ function initCustomCursor() {
   document.addEventListener("mouseup", function () {
     clicking = false;
     ring.classList.remove("is-click");
-  });
-
-  function updateModalCursor() {
-    var anyOpen = false;
-    document.querySelectorAll(".project-modal").forEach(function (m) {
-      if (m.style.display === "flex") anyOpen = true;
-    });
-    document.body.classList.toggle("cursor-hidden", anyOpen);
-  }
-
-  document.querySelectorAll(".project-modal").forEach(function (modal) {
-    new MutationObserver(updateModalCursor).observe(modal, {
-      attributes: true,
-      attributeFilter: ["style"]
-    });
   });
 
   function tick() {
