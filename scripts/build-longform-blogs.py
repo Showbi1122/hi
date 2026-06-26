@@ -55,7 +55,7 @@ def main():
         <div class="blog-card-body">
           <span class="blog-tag">{a.get('tag', 'Web Development')}</span>
           <h3>{a['headline']}</h3>
-          <p>{a['meta_description']}</p>
+          <p>{a.get('card_description', a['meta_description'])}</p>
           <span class="read-more">{a.get('reading_time', '12 min read')} · Read article</span>
         </div>
       </a>"""

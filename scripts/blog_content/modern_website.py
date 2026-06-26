@@ -2,11 +2,12 @@
 
 ARTICLE = {
     "slug": "why-every-business-needs-modern-website",
-    "seo_title": "Why Every Business Needs a Modern Website in 2026",
-    "meta_description": "A modern business website builds trust, captures leads, and ranks in search. Learn what makes a site modern and when to rebuild yours from a working developer.",
+    "seo_title": "Why Every Business Needs a Modern Website in 2026 | Malik Taleeb Shahbaz",
+    "meta_description": "Learn what a modern business website needs in 2026: mobile speed, HTTPS, SEO, and lead-focused design. When to rebuild vs refresh, from a working developer.",
     "social_description": "Your website is still the hub of your digital presence. Here's what a modern business website actually needs in 2026, from someone who builds them for clients across the USA, UK, UAE, and Pakistan.",
     "headline": "Why Every Business Needs a Modern Website in 2026",
     "tag": "Business Growth",
+    "card_description": "What makes a business website modern in 2026, and when to rebuild yours. Mobile speed, SEO, trust, and leads from a developer who builds them daily.",
     "lead": "I've rebuilt sites for driving schools in Texas, plumbing companies in Birmingham, and SaaS startups in Dubai. Same story every time: the owner knew the old site was costing them leads, but wasn't sure what \"modern\" meant or if the spend was worth it.",
     "reading_time": "14 min read",
     "word_count": 3450,
@@ -14,6 +15,8 @@ ARTICLE = {
     "image_alt": "Modern business website displayed on laptop and smartphone showing fast mobile layout",
     "date_published": "2025-06-01",
     "related_links": """
+          <li><a href="../index.html">Homepage</a></li>
+          <li><a href="../index.html#service-custom-website">Custom website development</a></li>
           <li><a href="benefits-custom-website-development.html">Custom vs template websites</a></li>
           <li><a href="seo-best-practices-business-websites.html">SEO best practices guide</a></li>
           <li><a href="lead-generation-website-tips.html">Lead generation website tips</a></li>""",

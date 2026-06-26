@@ -2,22 +2,24 @@
 
 ARTICLE = {
     "slug": "how-ai-changing-web-development",
-    "seo_title": "How AI Is Changing Web Development in 2025 | Malik Taleeb Shahbaz",
-    "meta_description": "AI is transforming how websites are built, searched, and maintained. Learn what business owners and developers should know about AI and web development.",
-    "social_description": "AI speeds up coding and changes how people find businesses online. Here is what actually matters for your website — without the hype.",
-    "headline": "How AI Is Changing Web Development in 2025",
+    "seo_title": "How AI Is Changing Web Development in 2026 | Malik Taleeb Shahbaz",
+    "meta_description": "How AI is changing web development in 2026: coding tools, AI search, GEO, and what business owners should demand from developers building their sites.",
+    "social_description": "AI speeds up coding and changes how people find businesses online. Here is what actually matters for your website in 2026 — without the hype.",
+    "headline": "How AI Is Changing Web Development in 2026",
     "tag": "AI & Automation",
-    "lead": "AI web development is not about replacing developers with chatbots. It is about faster implementation, new discovery channels, and higher expectations for what a business website must communicate. After building client sites and testing how AI search tools cite them, I have a practical view of what changed in 2024–2025 — and what stayed the same.",
+    "card_description": "How AI coding tools and AI search change website builds in 2026. Practical GEO tips for business owners, not hype.",
+    "lead": "AI web development is not about replacing developers with chatbots. It is about faster implementation, new discovery channels, and higher expectations for what a business website must communicate. After building client sites and testing how AI search tools cite them, I have a practical view of what changed in 2024–2026 — and what stayed the same.",
     "reading_time": "14 min read",
     "word_count": 2920,
     "keywords": "AI web development, AI search optimization, GEO web development, AI coding assistants, AI business websites",
     "image_alt": "Developer workflow showing AI-assisted web development and AI search discovery for business websites",
     "date_published": "2025-06-01",
     "related_links": """
-          <li><a href="seo-best-practices-business-websites.html">SEO Best Practices for Business Websites</a></li>
-          <li><a href="why-every-business-needs-modern-website.html">Why Every Business Needs a Modern Website</a></li>
-          <li><a href="benefits-custom-website-development.html">Custom Website Development Benefits</a></li>
-          <li><a href="../index.html#service-ai">AI Website Development Services</a></li>""",
+          <li><a href="../index.html">Homepage</a></li>
+          <li><a href="../index.html#service-ai">AI website development services</a></li>
+          <li><a href="seo-best-practices-business-websites.html">SEO best practices</a></li>
+          <li><a href="why-every-business-needs-modern-website.html">Modern business website guide</a></li>
+          <li><a href="benefits-custom-website-development.html">Custom website benefits</a></li>""",
     "cta_text": "If you want a website structured for both Google and AI discovery — with practical automation where it helps — I build AI-ready business sites and integrations. Share your goals and I will tell you what is worth building now versus later.",
     "body_html": """
     <section class="quick-answer reveal">

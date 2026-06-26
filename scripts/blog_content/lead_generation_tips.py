@@ -2,20 +2,23 @@
 
 ARTICLE = {
     "slug": "lead-generation-website-tips",
-    "seo_title": "Lead Generation Website Tips That Convert",
-    "meta_description": "Lead generation website tips for service businesses: landing page structure, CTAs, trust signals, forms, speed, tracking, and conversion optimization that works.",
+    "seo_title": "Lead Generation Website Tips That Convert (2026 Guide) | Malik Taleeb Shahbaz",
+    "meta_description": "Lead generation website tips for 2026: landing page structure, CTAs, trust signals, short forms, mobile speed, and conversion tracking that drives inquiries.",
     "social_description": "Practical lead generation website tips, page structure, trust signals, forms, and speed, from a developer who builds conversion-focused sites for global clients.",
     "headline": "Lead Generation Website Tips That Actually Convert Visitors Into Inquiries",
     "tag": "Marketing",
-    "lead": "Traffic without conversions is an expense. I build lead generation websites for consultants, trades, agencies, and SaaS companies, and the pattern is consistent: clarity above the fold, proof before the pitch, fast mobile loads, and forms that respect the user's time. This is what separates sites that book calls from sites that only look good in a portfolio screenshot.",
+    "card_description": "Turn website traffic into qualified inquiries: landing page structure, CTAs, trust signals, forms, and speed fixes that work in 2026.",
+    "lead": "Traffic without conversions is an expense. I build lead generation websites for consultants, trades, agencies, and SaaS companies through my <a href=\"../index.html#service-landing\">landing page development</a> work. The pattern is consistent: clarity above the fold, proof before the pitch, fast mobile loads, and forms that respect the user's time.",
     "reading_time": "13 min read",
     "word_count": 2800,
     "keywords": "lead generation website, landing page conversion, website lead generation tips, conversion rate optimization, trust signals, landing page design",
     "image_alt": "Lead generation website layout showing headline, call to action, trust badges, and contact form above the fold",
     "date_published": "2025-06-01",
     "related_links": """
+          <li><a href="../index.html">Homepage</a></li>
           <li><a href="../index.html#service-landing">Landing page development</a></li>
           <li><a href="benefits-custom-website-development.html">Custom website benefits</a></li>
+          <li><a href="why-every-business-needs-modern-website.html">Modern business website guide</a></li>
           <li><a href="../index.html#projects">Portfolio</a></li>""",
     "cta_text": "If your site gets visitors but not enough qualified inquiries, I rebuild landing pages around one clear offer, proof, and measurable conversion paths. Share your URL and how you currently get leads, I'll point out what is leaking conversions.",
     "body_html": """
