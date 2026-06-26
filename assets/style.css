@@ -238,7 +238,7 @@ img { max-width: 100%; display: block; }
 
 .hero-layout {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: clamp(32px, 6vw, 80px);
   width: 100%;
