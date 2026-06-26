@@ -2,13 +2,13 @@
 
 ARTICLE = {
     "slug": "benefits-custom-website-development",
-    "seo_title": "7 Benefits of Custom Website Development vs Templates (2026) | Malik Taleeb Shahbaz",
+    "seo_title": "Custom Website vs Templates: 7 Benefits (2026) | Malik Taleeb",
     "meta_description": "Custom website development vs templates: faster performance, stronger SEO, better branding, and room to scale without plugin bloat. Real examples included.",
     "social_description": "Templates get you online fast. Custom development gets you found, trusted, and converting. Here is what I have seen across real client projects.",
-    "headline": "7 Benefits of Custom Website Development vs Templates",
+    "headline": "7 Benefits of Custom Website Development vs Templates (2026 Guide)",
     "tag": "Web Development",
     "card_description": "Custom website vs WordPress templates: speed, SEO, branding, and scalability with examples from real client projects.",
-    "lead": "Most business owners start with a template because it feels cheaper and faster. That is often true for week one. Six months later, many of them call a developer because the site loads slowly, looks like three competitors, or cannot support the booking flow they now need. This guide explains the custom website development benefits I see on real projects — and when a template still makes sense.",
+    "lead": "Most business owners start with a template because it feels cheaper and faster. That is often true for week one. Six months later, many call a developer because custom website development benefits — speed, SEO, and unique branding — outweigh template savings. This guide explains what I see on real projects, and when a template still makes sense. See <a href=\"../index.html#service-custom-website\">custom website services</a> on my homepage.",
     "reading_time": "14 min read",
     "word_count": 2850,
     "keywords": "custom website development benefits, custom vs WordPress, bespoke web development, template website disadvantages, custom business website",
@@ -20,7 +20,7 @@ ARTICLE = {
           <li><a href="why-every-business-needs-modern-website.html">Why Every Business Needs a Modern Website</a></li>
           <li><a href="lead-generation-website-tips.html">Lead Generation Website Tips</a></li>
           <li><a href="seo-best-practices-business-websites.html">SEO Best Practices for Business Websites</a></li>""",
-    "cta_text": "If you are weighing a template against a custom build, I can review your goals and give you an honest recommendation — including cases where a template is the right call. I build custom websites for service businesses, schools, and agencies worldwide.",
+    "cta_text": "If you are weighing a template against a custom build, I can review your goals and give you an honest recommendation — including cases where a template is the right call. <a href=\"../index.html#contact\">Contact me</a> or <a href=\"../index.html#service-custom-website\">view custom website services</a> on my homepage.",
     "body_html": """
     <section class="quick-answer reveal">
       <h2>Quick answer</h2>

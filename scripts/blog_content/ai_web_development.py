@@ -2,13 +2,13 @@
 
 ARTICLE = {
     "slug": "how-ai-changing-web-development",
-    "seo_title": "How AI Is Changing Web Development in 2026 | Malik Taleeb Shahbaz",
+    "seo_title": "AI Web Development in 2026: Practical Guide | Malik Taleeb",
     "meta_description": "How AI is changing web development in 2026: coding tools, AI search, GEO, and what business owners should demand from developers building their sites.",
     "social_description": "AI speeds up coding and changes how people find businesses online. Here is what actually matters for your website in 2026 — without the hype.",
     "headline": "How AI Is Changing Web Development in 2026",
     "tag": "AI & Automation",
     "card_description": "How AI coding tools and AI search change website builds in 2026. Practical GEO tips for business owners, not hype.",
-    "lead": "AI web development is not about replacing developers with chatbots. It is about faster implementation, new discovery channels, and higher expectations for what a business website must communicate. After building client sites and testing how AI search tools cite them, I have a practical view of what changed in 2024–2026 — and what stayed the same.",
+    "lead": "AI web development is not about replacing developers with chatbots. It is about faster implementation, new discovery channels, and higher expectations for what a business website must communicate. After building client sites and testing how AI search tools cite them, I have a practical view of what changed in AI web development from 2024 through 2026 — and what stayed the same. See my <a href=\"../index.html#service-ai\">AI website development services</a> for implementation help.",
     "reading_time": "14 min read",
     "word_count": 2920,
     "keywords": "AI web development, AI search optimization, GEO web development, AI coding assistants, AI business websites",
@@ -20,11 +20,11 @@ ARTICLE = {
           <li><a href="seo-best-practices-business-websites.html">SEO best practices</a></li>
           <li><a href="why-every-business-needs-modern-website.html">Modern business website guide</a></li>
           <li><a href="benefits-custom-website-development.html">Custom website benefits</a></li>""",
-    "cta_text": "If you want a website structured for both Google and AI discovery — with practical automation where it helps — I build AI-ready business sites and integrations. Share your goals and I will tell you what is worth building now versus later.",
+    "cta_text": "If you want a website structured for both Google and AI discovery — with practical automation where it helps — <a href=\"../index.html#contact\">hire me</a> for AI-ready business sites. Share your goals and I will tell you what is worth building now versus later.",
     "body_html": """
     <section class="quick-answer reveal">
-      <h2>Quick answer</h2>
-      <p>AI web development changes two things at once: how sites are built and how they are found. Developers use coding assistants to ship features faster with the same review standards. Customers increasingly discover businesses through AI answer engines that pull from clear, structured website content. Your site needs fast performance, explicit answers to real questions, schema markup, and author credibility — not a gimmicky chatbot on every homepage.</p>
+      <h2>Quick answer: AI web development in 2026</h2>
+      <p>AI web development changes two things at once: how sites are built and how they are found. Developers use coding assistants to ship features faster with the same review standards. Customers increasingly discover businesses through AI answer engines that pull from clear, structured website content. Your site needs fast performance, explicit answers to real questions, schema markup, and author credibility — not a gimmicky chatbot on every homepage. Start with my <a href="../index.html">homepage</a> and <a href="seo-best-practices-business-websites.html">SEO best practices guide</a>.</p>
     </section>
 
     <section class="key-takeaways reveal">
