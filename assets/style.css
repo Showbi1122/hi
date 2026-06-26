@@ -1465,6 +1465,27 @@ section { padding: 88px 0 0; }
   .sticky-whatsapp { bottom: 20px; right: 20px; width: 52px; height: 52px; }
 }
 
+.site-footer a:hover {
+  color: var(--gold-light);
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 10002;
+  padding: 12px 20px;
+  background: var(--gold);
+  color: var(--bg);
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
 /* ── Certificate pages ── */
 .cert-page {
   position: relative;
