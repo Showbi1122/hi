@@ -166,11 +166,26 @@ function initCustomCursor() {
   let cursorHidden = false;
   let hoverTarget = null;
   let hoverFramePending = false;
-  let ticking = false;
 
-  const hoverSelector = "a, button, .btn, summary, .view-project, .project-card, .social-link, .sticky-whatsapp, .nav-toggle, .close-modal, .prev, .next, .faq-item summary";
+  const hoverSelector = "a, button, .btn, summary, .view-project, .project-card, .social-link, .sticky-whatsapp, .close-modal, .prev, .next, .faq-item summary";
+
+  function isOnNavbar(target) {
+    return !!(target && target.closest && target.closest(".navbar"));
+  }
+
+  function updateNavbarCursorState(target) {
+    if (!dot || !ring) return;
+    const onNavbar = isOnNavbar(target);
+    dot.classList.toggle("is-nav-hidden", onNavbar);
+    ring.classList.toggle("is-nav-hidden", onNavbar);
+    if (onNavbar) {
+      ring.classList.remove("is-hover", "is-click");
+      isHovering = false;
+    }
+  }
 
   function applyHoverState(target) {
+    if (!ring || isOnNavbar(target)) return;
     const interactive = !!(target && target.closest && target.closest(hoverSelector));
     if (interactive === isHovering) return;
     isHovering = interactive;
@@ -188,12 +203,17 @@ function initCustomCursor() {
   }
 
   function tick() {
+    if (!started || !visible) return;
     const scale = clicking ? 0.6 : 1;
     dot.style.transform = "translate3d(" + currentX + "px, " + currentY + "px, 0) scale(" + scale + ")";
     ringX += (currentX - ringX) * 0.14;
     ringY += (currentY - ringY) * 0.14;
     ring.style.transform = "translate3d(" + ringX + "px, " + ringY + "px, 0)";
-    ticking = false;
+  }
+
+  function loop() {
+    tick();
+    requestAnimationFrame(loop);
   }
 
   function onMove(e) {
@@ -224,15 +244,14 @@ function initCustomCursor() {
       ring.classList.add("is-visible");
     }
 
-    scheduleHoverUpdate(e.target);
-
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(tick);
+    updateNavbarCursorState(e.target);
+    if (!isOnNavbar(e.target)) {
+      scheduleHoverUpdate(e.target);
     }
   }
 
   document.addEventListener("mousemove", onMove, { passive: true });
+  requestAnimationFrame(loop);
 
   document.addEventListener("mouseenter", function () {
     if (!cursorHidden) return;
@@ -246,7 +265,8 @@ function initCustomCursor() {
     document.body.classList.add("cursor-hidden");
   });
 
-  document.addEventListener("mousedown", function () {
+  document.addEventListener("mousedown", function (e) {
+    if (isOnNavbar(e.target)) return;
     if (clicking) return;
     clicking = true;
     if (ring) ring.classList.add("is-click");
