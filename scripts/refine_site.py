@@ -45,7 +45,6 @@ REPLACEMENTS = [
     (r"\bwill not\b", "won't"),
     (r"\bI am\b", "I'm"),
     (r"\bthat is\b", "that's"),
-    (r"\bit is\b", "it's"),
     (r"\byou are\b", "you're"),
     (r", ,", ","),
 ]
