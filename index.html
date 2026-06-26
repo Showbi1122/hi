@@ -12,9 +12,11 @@
 <link href="https://taleeb-shahbaz.vercel.app/" rel="canonical"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link as="image" fetchpriority="high" href="assets/home/taleeb-420.webp" imagesizes="(max-width: 768px) 85vw, 420px" imagesrcset="assets/home/taleeb-420.webp 420w, assets/home/taleeb-840.webp 840w" rel="preload" type="image/webp"/>
-<link as="style" href="assets/style.css" rel="preload"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<link as="image" fetchpriority="high" href="assets/home/taleeb-360.webp" imagesizes="min(85vw, 360px)" imagesrcset="assets/home/taleeb-360.webp 360w, assets/home/taleeb-700.webp 700w" media="(max-width: 768px)" rel="preload" type="image/webp"/>
+<link as="image" fetchpriority="high" href="assets/home/taleeb-420.webp" imagesizes="420px" imagesrcset="assets/home/taleeb-420.webp 420w, assets/home/taleeb-840.webp 840w" media="(min-width: 769px)" rel="preload" type="image/webp"/>
+<link href="assets/critical.css" rel="stylesheet"/>
+<link href="assets/style.css" rel="stylesheet"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
 <meta content="#050508" name="theme-color"/>
 <meta content="default-src 'self'; img-src 'self' https: data:; font-src 'self' https: data:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' https:;" http-equiv="Content-Security-Policy"/>
@@ -54,7 +56,6 @@
 <link href="/android-chrome-192x192.png" rel="icon" sizes="192x192" type="image/png"/>
 <link href="/android-chrome-512x512.png" rel="icon" sizes="512x512" type="image/png"/>
 <link href="/site.webmanifest" rel="manifest"/>
-<link href="assets/style.css" rel="stylesheet"/>
 <link href="assets/content.css" media="print" onload="this.media='all'" rel="stylesheet"/>
 <noscript><link href="assets/content.css" rel="stylesheet"/></noscript>
 <!-- Schema.org structured data -->
@@ -94,7 +95,7 @@
         "jobTitle": ["Web Developer", "Full Stack Developer", "Software Engineer", "Frontend Developer", "SaaS Developer"],
         "url": "https://taleeb-shahbaz.vercel.app/",
         "description": "Malik Taleeb Shahbaz is a freelance web developer, React developer, and Next.js developer who builds custom websites, SaaS applications, and SEO-optimized digital products for startups and businesses worldwide.",
-        "image": "https://taleeb-shahbaz.vercel.app/assets/home/taleeb.jpeg",
+        "image": "https://taleeb-shahbaz.vercel.app/assets/home/taleeb-420.webp",
         "address": { "@type": "PostalAddress", "addressCountry": "PK" },
         "worksFor": { "@type": "Organization", "name": "Nexelix" },
         "knowsAbout": [
@@ -247,7 +248,7 @@
 <span class="status-dot"></span>
           Available for freelance &amp; full-time
         </div>
-<h1 class="animate-in" itemprop="name" style="--d:0.2s">
+<h1 class="animate-in" id="hero-title" itemprop="name" style="--d:0.2s">
           Professional Web Developer<br/><span class="gradient-text">React, Next.js &amp; SaaS Development</span>
 </h1>
 <p class="hero-subtitle animate-in" itemprop="description" style="--d:0.35s">
@@ -289,8 +290,8 @@
 <div class="photo-frame">
 <div class="photo-shine"></div>
 <picture>
-<source sizes="(max-width: 768px) 85vw, 420px" srcset="assets/home/taleeb-420.webp 420w, assets/home/taleeb-840.webp 840w" type="image/webp"/>
-<img alt="Malik Taleeb Shahbaz, professional web developer" class="hero-photo" decoding="async" fetchpriority="high" height="520" itemprop="image" loading="eager" sizes="(max-width: 768px) 85vw, 420px" src="assets/home/taleeb-420.jpeg" srcset="assets/home/taleeb-420.jpeg 420w" width="420"/>
+<source sizes="(max-width: 768px) min(85vw, 360px), 420px" srcset="assets/home/taleeb-360.webp 360w, assets/home/taleeb-700.webp 700w, assets/home/taleeb-420.webp 420w, assets/home/taleeb-840.webp 840w" type="image/webp"/>
+<img alt="Malik Taleeb Shahbaz, professional web developer" class="hero-photo" decoding="async" fetchpriority="high" height="480" itemprop="image" loading="eager" sizes="(max-width: 768px) min(85vw, 360px), 420px" src="assets/home/taleeb-360.jpeg" srcset="assets/home/taleeb-360.jpeg 360w, assets/home/taleeb-700.jpeg 700w, assets/home/taleeb-420.jpeg 420w" width="360"/>
 </picture>
 </div>
 </div>
@@ -318,7 +319,7 @@
 <span>Global Clients</span><span>·</span>
 </div>
 </div>
-<main id="main-content">
+<main aria-labelledby="hero-title" id="main-content">
 <section id="about">
 <div class="section-header reveal">
 <span class="section-label">About Me</span>
@@ -815,9 +816,10 @@
 </section>
 </main>
 <footer class="site-footer">
+<h2 class="footer-section-title">Site links and resources</h2>
 <div class="footer-grid">
 <div class="footer-col">
-<h4>Services</h4>
+<h3>Services</h3>
 <ul>
 <li><a href="#service-custom-website">Custom Website Development</a></li>
 <li><a href="#service-saas">SaaS Development</a></li>
@@ -827,7 +829,7 @@
 </ul>
 </div>
 <div class="footer-col">
-<h4>Locations</h4>
+<h3>Locations</h3>
 <ul>
 <li><a href="geo/web-developer-usa.html">Web Developer USA</a></li>
 <li><a href="geo/website-developer-uk.html">Website Developer UK</a></li>
@@ -836,7 +838,7 @@
 </ul>
 </div>
 <div class="footer-col">
-<h4>Blog</h4>
+<h3>Blog</h3>
 <ul>
 <li><a href="blog/why-every-business-needs-modern-website.html">Modern Website Guide</a></li>
 <li><a href="blog/react-vs-nextjs.html">React vs Next.js</a></li>
@@ -845,7 +847,7 @@
 </ul>
 </div>
 <div class="footer-col">
-<h4>Connect</h4>
+<h3>Connect</h3>
 <ul>
 <li><a href="https://www.linkedin.com/in/malik-taleeb-shahbaz-138769342" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
 <li><a href="https://github.com/mtaleebshahbaz" rel="noopener noreferrer" target="_blank">GitHub</a></li>

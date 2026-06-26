@@ -395,7 +395,7 @@
   padding: 0 clamp(20px, 5vw, 48px);
 }
 
-.footer-col h4 {
+.footer-col h3 {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.1em;
