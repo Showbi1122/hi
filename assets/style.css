@@ -1290,13 +1290,17 @@ main section { padding: 88px 0 0; }
   position: fixed;
   z-index: 9999;
   inset: 0;
+  display: none;
   background: rgba(5, 5, 8, 0.9);
   backdrop-filter: blur(12px);
-  display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
   animation: modalBg 0.3s ease;
+}
+
+.project-modal.is-open {
+  display: flex;
 }
 
 @keyframes modalBg {

@@ -12,9 +12,9 @@
 <link href="https://taleeb-shahbaz.vercel.app/" rel="canonical"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link as="image" fetchpriority="high" href="assets/home/taleeb-360.webp" imagesizes="min(85vw, 360px)" imagesrcset="assets/home/taleeb-360.webp 360w, assets/home/taleeb-700.webp 700w" media="(max-width: 768px)" rel="preload" type="image/webp"/>
-<link as="image" fetchpriority="high" href="assets/home/taleeb-420.webp" imagesizes="420px" imagesrcset="assets/home/taleeb-420.webp 420w, assets/home/taleeb-840.webp 840w" media="(min-width: 769px)" rel="preload" type="image/webp"/>
-<link href="assets/critical.css" rel="stylesheet"/>
+<link as="image" fetchpriority="high" href="assets/home/taleeb-360.webp" imagesizes="min(85vw, 360px)" imagesrcset="assets/home/taleeb-360.webp 360w, assets/home/taleeb-720.webp 720w" media="(max-width: 1024px)" rel="preload" type="image/webp"/>
+<link as="image" fetchpriority="high" href="assets/home/taleeb-420.webp" imagesizes="420px" imagesrcset="assets/home/taleeb-420.webp 420w, assets/home/taleeb-840.webp 840w" media="(min-width: 1025px)" rel="preload" type="image/webp"/>
+<link as="style" href="assets/style.css" rel="preload"/>
 <link href="assets/style.css" rel="stylesheet"/>
 <link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Sora:wght@600;700;800&amp;display=swap" rel="stylesheet"/></noscript>
@@ -290,8 +290,9 @@
 <div class="photo-frame">
 <div class="photo-shine"></div>
 <picture>
-<source sizes="(max-width: 768px) min(85vw, 360px), 420px" srcset="assets/home/taleeb-360.webp 360w, assets/home/taleeb-700.webp 700w, assets/home/taleeb-420.webp 420w, assets/home/taleeb-840.webp 840w" type="image/webp"/>
-<img alt="Malik Taleeb Shahbaz, professional web developer" class="hero-photo" decoding="async" fetchpriority="high" height="480" itemprop="image" loading="eager" sizes="(max-width: 768px) min(85vw, 360px), 420px" src="assets/home/taleeb-360.jpeg" srcset="assets/home/taleeb-360.jpeg 360w, assets/home/taleeb-700.jpeg 700w, assets/home/taleeb-420.jpeg 420w" width="360"/>
+<source media="(max-width: 1024px)" sizes="min(85vw, 360px)" srcset="assets/home/taleeb-360.webp 360w, assets/home/taleeb-720.webp 720w" type="image/webp"/>
+<source media="(min-width: 1025px)" sizes="420px" srcset="assets/home/taleeb-420.webp 420w, assets/home/taleeb-840.webp 840w" type="image/webp"/>
+<img alt="Malik Taleeb Shahbaz, professional web developer" class="hero-photo" decoding="async" fetchpriority="high" height="480" itemprop="image" loading="eager" sizes="(max-width: 1024px) min(85vw, 360px), 420px" src="assets/home/taleeb-360.jpeg" srcset="assets/home/taleeb-360.jpeg 360w, assets/home/taleeb-720.jpeg 720w, assets/home/taleeb-420.jpeg 420w" width="360"/>
 </picture>
 </div>
 </div>
@@ -567,7 +568,7 @@
 </div>
 <a class="view-project" data-modal="modal-portfolio" href="#">View Project</a>
 </div>
-<div aria-modal="true" class="project-modal" id="modal-portfolio" role="dialog" style="display:none;">
+<div aria-modal="true" class="project-modal" id="modal-portfolio" role="dialog">
 <div class="modal-content">
 <span aria-label="Close" class="close-modal" data-modal="modal-portfolio">×</span>
 <div class="slider">
@@ -599,7 +600,7 @@
 </div>
 <a class="view-project" data-modal="modal-task-manager" href="#">View Project</a>
 </div>
-<div aria-modal="true" class="project-modal" id="modal-task-manager" role="dialog" style="display:none;">
+<div aria-modal="true" class="project-modal" id="modal-task-manager" role="dialog">
 <div class="modal-content">
 <span aria-label="Close" class="close-modal" data-modal="modal-task-manager">×</span>
 <div class="slider">
@@ -631,7 +632,7 @@
 </div>
 <a class="view-project" data-modal="modal-landing-page" href="#">View Project</a>
 </div>
-<div aria-modal="true" class="project-modal" id="modal-landing-page" role="dialog" style="display:none;">
+<div aria-modal="true" class="project-modal" id="modal-landing-page" role="dialog">
 <div class="modal-content">
 <span aria-label="Close" class="close-modal" data-modal="modal-landing-page">×</span>
 <div class="slider">
@@ -663,7 +664,7 @@
 </div>
 <a class="view-project" data-modal="modal-weather-dashboard" href="#">View Project</a>
 </div>
-<div aria-modal="true" class="project-modal" id="modal-weather-dashboard" role="dialog" style="display:none;">
+<div aria-modal="true" class="project-modal" id="modal-weather-dashboard" role="dialog">
 <div class="modal-content">
 <span aria-label="Close" class="close-modal" data-modal="modal-weather-dashboard">×</span>
 <div class="slider">

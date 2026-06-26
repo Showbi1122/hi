@@ -19,17 +19,18 @@
   }
 
   if (navToggle && navLinks) {
+    let isOpen = navLinks.classList.contains("open");
+
     navToggle.addEventListener("click", function () {
-      requestAnimationFrame(function () {
-        const isOpen = !navLinks.classList.contains("open");
-        navLinks.classList.toggle("open", isOpen);
-        navToggle.setAttribute("aria-expanded", String(isOpen));
-      });
+      isOpen = !isOpen;
+      navLinks.classList.toggle("open", isOpen);
+      navToggle.setAttribute("aria-expanded", String(isOpen));
     });
 
     navLinks.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        if (!navLinks.classList.contains("open")) return;
+        if (!isOpen) return;
+        isOpen = false;
         navLinks.classList.remove("open");
         navToggle.setAttribute("aria-expanded", "false");
       });
@@ -43,9 +44,7 @@
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({
-          behavior: prefersReducedMotion || isCoarsePointer ? "auto" : "smooth"
-        });
+        target.scrollIntoView({ behavior: "auto", block: "start" });
       }
     });
   });
@@ -90,23 +89,23 @@
   }
 
   function initModals() {
+    function openModal(modal) {
+      if (!modal.classList.contains("is-open")) {
+        modal.classList.add("is-open");
+      }
+    }
+
+    function closeModal(modal) {
+      modal.classList.remove("is-open");
+    }
+
     document.querySelectorAll(".view-project[data-modal]").forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         const modal = document.getElementById(this.getAttribute("data-modal"));
-        if (modal && modal.style.display !== "flex") {
-          requestAnimationFrame(function () {
-            modal.style.display = "flex";
-          });
-        }
+        if (modal) openModal(modal);
       });
     });
-
-    function closeModal(modal) {
-      if (modal.style.display !== "none") {
-        modal.style.display = "none";
-      }
-    }
 
     document.querySelectorAll(".close-modal").forEach(function (btn) {
       btn.addEventListener("click", function () {
@@ -123,15 +122,13 @@
 
     document.addEventListener("keydown", function (e) {
       if (e.key !== "Escape") return;
-      document.querySelectorAll(".project-modal").forEach(function (modal) {
-        if (modal.style.display === "flex") closeModal(modal);
-      });
+      document.querySelectorAll(".project-modal.is-open").forEach(closeModal);
     });
   }
 
   function scheduleIdle(work) {
     if ("requestIdleCallback" in window) {
-      requestIdleCallback(work, { timeout: 2000 });
+      requestIdleCallback(work, { timeout: 3000 });
       return;
     }
     setTimeout(work, 1);
@@ -156,31 +153,20 @@
 })();
 
 function initCustomCursor() {
-  const mouseX = window.innerWidth / 2;
-  const mouseY = window.innerHeight / 2;
-
-  const dot = document.createElement("div");
-  dot.className = "cursor-dot";
-  dot.setAttribute("aria-hidden", "true");
-
-  const ring = document.createElement("div");
-  ring.className = "cursor-ring";
-  ring.setAttribute("aria-hidden", "true");
-
-  document.body.appendChild(dot);
-  document.body.appendChild(ring);
-  document.body.classList.add("custom-cursor");
-
-  let ringX = mouseX;
-  let ringY = mouseY;
-  let currentX = mouseX;
-  let currentY = mouseY;
+  let started = false;
+  let dot;
+  let ring;
+  let ringX = 0;
+  let ringY = 0;
+  let currentX = 0;
+  let currentY = 0;
   let visible = false;
   let clicking = false;
   let isHovering = false;
   let cursorHidden = false;
   let hoverTarget = null;
   let hoverFramePending = false;
+  let ticking = false;
 
   const hoverSelector = "a, button, .btn, summary, .view-project, .project-card, .social-link, .sticky-whatsapp, .nav-toggle, .close-modal, .prev, .next, .faq-item summary";
 
@@ -201,20 +187,52 @@ function initCustomCursor() {
     });
   }
 
-  document.addEventListener("mousemove", function (e) {
+  function tick() {
+    const scale = clicking ? 0.6 : 1;
+    dot.style.transform = "translate3d(" + currentX + "px, " + currentY + "px, 0) scale(" + scale + ")";
+    ringX += (currentX - ringX) * 0.14;
+    ringY += (currentY - ringY) * 0.14;
+    ring.style.transform = "translate3d(" + ringX + "px, " + ringY + "px, 0)";
+    ticking = false;
+  }
+
+  function onMove(e) {
     currentX = e.clientX;
     currentY = e.clientY;
+
+    if (!started) {
+      started = true;
+      dot = document.createElement("div");
+      dot.className = "cursor-dot";
+      dot.setAttribute("aria-hidden", "true");
+
+      ring = document.createElement("div");
+      ring.className = "cursor-ring";
+      ring.setAttribute("aria-hidden", "true");
+
+      document.body.appendChild(dot);
+      document.body.appendChild(ring);
+      document.body.classList.add("custom-cursor");
+
+      ringX = currentX;
+      ringY = currentY;
+    }
 
     if (!visible) {
       visible = true;
       dot.classList.add("is-visible");
       ring.classList.add("is-visible");
-      ringX = currentX;
-      ringY = currentY;
     }
 
     scheduleHoverUpdate(e.target);
-  }, { passive: true });
+
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(tick);
+    }
+  }
+
+  document.addEventListener("mousemove", onMove, { passive: true });
 
   document.addEventListener("mouseenter", function () {
     if (!cursorHidden) return;
@@ -231,23 +249,12 @@ function initCustomCursor() {
   document.addEventListener("mousedown", function () {
     if (clicking) return;
     clicking = true;
-    ring.classList.add("is-click");
+    if (ring) ring.classList.add("is-click");
   });
 
   document.addEventListener("mouseup", function () {
     if (!clicking) return;
     clicking = false;
-    ring.classList.remove("is-click");
+    if (ring) ring.classList.remove("is-click");
   });
-
-  function tick() {
-    const scale = clicking ? 0.6 : 1;
-    dot.style.transform = "translate3d(" + currentX + "px, " + currentY + "px, 0) scale(" + scale + ")";
-    ringX += (currentX - ringX) * 0.14;
-    ringY += (currentY - ringY) * 0.14;
-    ring.style.transform = "translate3d(" + ringX + "px, " + ringY + "px, 0)";
-    requestAnimationFrame(tick);
-  }
-
-  requestAnimationFrame(tick);
 }
