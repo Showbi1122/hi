@@ -315,7 +315,7 @@ def main():
       "name": "Malik Taleeb Shahbaz",
       "jobTitle": "Web Developer",
       "url": "%s/about.html",
-      "image": "%s/assets/home/taleeb-420.webp",
+      "image": "%s/assets/home/taleeb.png",
       "sameAs": [
         "https://github.com/mtaleebshahbaz",
         "https://www.linkedin.com/in/malik-taleeb-shahbaz-138769342"
