@@ -186,7 +186,7 @@ def render_page(article):
         </ul>
       </div>
     </div>
-    <p>&copy; 2025 <a href="../index.html">Malik Taleeb Shahbaz</a> · Web Developer &amp; Software Engineer.</p>
+    <p>&copy; 2026 <a href="../index.html">Malik Taleeb Shahbaz</a> · Web Developer &amp; Software Engineer.</p>
   </footer>
 
   <a href="{WHATSAPP}" class="sticky-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
