@@ -373,7 +373,7 @@ GEO_PAGES = [
 ]
 
 
-def og_block(title, description, url, image=f"{BASE}/assets/home/og-image.jpg"):
+def og_block(title, description, url, image=f"{BASE}/assets/home/og-image.webp"):
     return f"""  <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Malik Taleeb Shahbaz · Web Developer" />
   <meta property="og:locale" content="en_US" />

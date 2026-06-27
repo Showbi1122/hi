@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/assets/home/og-image.jpg",
+      "source": "/assets/home/og-image.webp",
       "headers": [
         {
           "key": "Cache-Control",

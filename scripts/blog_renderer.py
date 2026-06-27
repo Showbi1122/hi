@@ -57,7 +57,7 @@ def render_page(article):
         "datePublished": article.get("date_published", "2025-06-01"),
         "dateModified": TODAY,
         "mainEntityOfPage": url,
-        "image": f"{BASE}/assets/home/og-image.jpg",
+        "image": f"{BASE}/assets/home/og-image.webp",
         "wordCount": word_count,
         "keywords": article.get("keywords", ""),
         "articleSection": article.get("tag", "Web Development"),
@@ -101,12 +101,12 @@ def render_page(article):
   <meta property="og:url" content="{url}" />
   <meta property="og:title" content="{title}" />
   <meta property="og:description" content="{social}" />
-  <meta property="og:image" content="{BASE}/assets/home/og-image.jpg" />
+  <meta property="og:image" content="{BASE}/assets/home/og-image.webp" />
   <meta property="og:image:alt" content="{article.get('image_alt', headline)}" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{title}" />
   <meta name="twitter:description" content="{social}" />
-  <meta name="twitter:image" content="{BASE}/assets/home/og-image.jpg" />
+  <meta name="twitter:image" content="{BASE}/assets/home/og-image.webp" />
 {favicon_head("../")}
   <link rel="stylesheet" href="../assets/style.css">
   <link rel="stylesheet" href="../assets/content.css">

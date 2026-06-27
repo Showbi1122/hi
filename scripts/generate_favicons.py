@@ -153,18 +153,18 @@ def write_ico(path: str, images: list[Image.Image]) -> None:
 
 def main() -> None:
     sizes = {
-        "favicon-16x16.png": 16,
-        "favicon-32x32.png": 32,
-        "apple-touch-icon.png": 180,
-        "android-chrome-192x192.png": 192,
-        "android-chrome-512x512.png": 512,
+        "favicon-16x16.webp": 16,
+        "favicon-32x32.webp": 32,
+        "apple-touch-icon.webp": 180,
+        "android-chrome-192x192.webp": 192,
+        "android-chrome-512x512.webp": 512,
     }
 
     rendered: dict[int, Image.Image] = {}
     for name, px in sizes.items():
         rendered[px] = draw_monogram(px)
         out = os.path.join(ROOT, name)
-        rendered[px].save(out, format="PNG", optimize=True)
+        rendered[px].save(out, format="WEBP", quality=90, method=6)
         print(f"Wrote {out}")
 
     write_svg(os.path.join(ROOT, "favicon.svg"))
