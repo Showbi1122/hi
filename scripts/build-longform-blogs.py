@@ -73,7 +73,7 @@ def main():
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <meta name="theme-color" content="#050508">
 {favicon_head("../")}
-  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="../assets/style.min.css">
   <link rel="stylesheet" href="../assets/content.css">
 </head>
 <body>
@@ -105,7 +105,7 @@ def main():
   <footer class="site-footer">
     <p>&copy; 2026 <a href="../index.html">Malik Taleeb Shahbaz</a> · Web Developer &amp; Software Engineer.</p>
   </footer>
-  <script src="../assets/main.js" defer></script>
+  <script src="../assets/main.min.js" defer></script>
 </body>
 </html>"""
 

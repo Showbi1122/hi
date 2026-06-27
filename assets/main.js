@@ -204,11 +204,14 @@ function initCustomCursor() {
 
   function tick() {
     if (!started || !visible) return;
-    const scale = clicking ? 0.6 : 1;
-    dot.style.transform = "translate3d(" + currentX + "px, " + currentY + "px, 0) scale(" + scale + ")";
+    const dotScale = clicking ? 0.6 : 1;
+    dot.style.transform = "translate3d(" + currentX + "px, " + currentY + "px, 0) scale(" + dotScale + ")";
     ringX += (currentX - ringX) * 0.14;
     ringY += (currentY - ringY) * 0.14;
-    ring.style.transform = "translate3d(" + ringX + "px, " + ringY + "px, 0)";
+    let ringScale = 1;
+    if (clicking) ringScale = 30 / 38;
+    else if (isHovering) ringScale = 56 / 38;
+    ring.style.transform = "translate3d(" + ringX + "px, " + ringY + "px, 0) scale(" + ringScale + ")";
   }
 
   function loop() {
