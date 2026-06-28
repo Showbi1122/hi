@@ -15,7 +15,7 @@ ARTICLE = {
     "image_alt": "Developer workflow showing AI-assisted web development and AI search discovery for business websites",
     "date_published": "2025-06-01",
     "related_links": """
-          <li><a href="../index.html">Homepage</a></li>
+          <li><a href="/">Homepage</a></li>
           <li><a href="../services.html#service-ai">AI website development services</a></li>
           <li><a href="seo-best-practices-business-websites.html">SEO best practices</a></li>
           <li><a href="why-every-business-needs-modern-website.html">Modern business website guide</a></li>
@@ -24,7 +24,7 @@ ARTICLE = {
     "body_html": """
     <section class="quick-answer reveal">
       <h2>Quick answer: AI web development in 2026</h2>
-      <p>AI web development changes two things at once: how sites are built and how they are found. Developers use coding assistants to ship features faster with the same review standards. Customers increasingly discover businesses through AI answer engines that pull from clear, structured website content. Your site needs fast performance, explicit answers to real questions, schema markup, and author credibility — not a gimmicky chatbot on every homepage. Start with my <a href="../index.html">homepage</a> and <a href="seo-best-practices-business-websites.html">SEO best practices guide</a>.</p>
+      <p>AI web development changes two things at once: how sites are built and how they are found. Developers use coding assistants to ship features faster with the same review standards. Customers increasingly discover businesses through AI answer engines that pull from clear, structured website content. Your site needs fast performance, explicit answers to real questions, schema markup, and author credibility — not a gimmicky chatbot on every homepage. Start with my <a href="/">homepage</a> and <a href="seo-best-practices-business-websites.html">SEO best practices guide</a>.</p>
     </section>
 
     <section class="key-takeaways reveal">

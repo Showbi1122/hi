@@ -15,7 +15,7 @@ ARTICLE = {
     "image_alt": "Comparison of custom website development and WordPress template sites for business growth",
     "date_published": "2025-06-01",
     "related_links": """
-          <li><a href="../index.html">Homepage</a></li>
+          <li><a href="/">Homepage</a></li>
           <li><a href="../services.html#service-custom-website">Custom Website Development Services</a></li>
           <li><a href="why-every-business-needs-modern-website.html">Why Every Business Needs a Modern Website</a></li>
           <li><a href="lead-generation-website-tips.html">Lead Generation Website Tips</a></li>

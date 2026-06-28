@@ -15,7 +15,7 @@ ARTICLE = {
     "image_alt": "Lead generation website layout showing headline, call to action, trust badges, and contact form above the fold",
     "date_published": "2025-06-01",
     "related_links": """
-          <li><a href="../index.html">Homepage</a></li>
+          <li><a href="/">Homepage</a></li>
           <li><a href="../services.html#service-landing">Landing page development</a></li>
           <li><a href="benefits-custom-website-development.html">Custom website benefits</a></li>
           <li><a href="why-every-business-needs-modern-website.html">Modern business website guide</a></li>

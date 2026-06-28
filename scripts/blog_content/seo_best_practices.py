@@ -15,7 +15,7 @@ ARTICLE = {
     "image_alt": "Technical SEO checklist for business websites showing site structure, performance metrics, and search rankings",
     "date_published": "2025-06-01",
     "related_links": """
-          <li><a href="../index.html">Homepage</a></li>
+          <li><a href="/">Homepage</a></li>
           <li><a href="../services.html#service-seo">SEO website development</a></li>
           <li><a href="how-ai-changing-web-development.html">AI and web development</a></li>
           <li><a href="react-vs-nextjs.html">React vs Next.js</a></li>

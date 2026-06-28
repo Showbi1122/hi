@@ -15,7 +15,7 @@ ARTICLE = {
     "image_alt": "Modern business website displayed on laptop and smartphone showing fast mobile layout",
     "date_published": "2025-06-01",
     "related_links": """
-          <li><a href="../index.html">Homepage</a></li>
+          <li><a href="/">Homepage</a></li>
           <li><a href="../services.html#service-custom-website">Custom website development</a></li>
           <li><a href="benefits-custom-website-development.html">Custom vs template websites</a></li>
           <li><a href="seo-best-practices-business-websites.html">SEO best practices guide</a></li>

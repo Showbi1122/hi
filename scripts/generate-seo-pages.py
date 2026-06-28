@@ -418,7 +418,7 @@ def page_shell(title, description, canonical, breadcrumb_items, schema_extra, bo
     else:
         depth = ""
 
-    nav_home = f"{depth}index.html"
+    nav_home = "/"
     nav_services = f"{nav_home}#services"
     nav_blog = f"{depth}blog/"
     nav_contact = f"{nav_home}#contact"

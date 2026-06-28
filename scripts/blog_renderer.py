@@ -123,22 +123,22 @@ def render_page(article):
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <nav class="navbar" id="navbar" aria-label="Main navigation">
-    <a href="../index.html" class="nav-logo"><span>MTS</span> · Developer</a>
+    <a href="/" class="nav-logo"><span>MTS</span> · Developer</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="../index.html">Home</a></li>
+      <li><a href="/">Home</a></li>
       <li><a href="../about.html">About</a></li>
       <li><a href="../services.html">Services</a></li>
       <li><a href="../projects.html">Projects</a></li>
       <li><a href="./">Blog</a></li>
-      <li><a href="../index.html#process">Process</a></li>
+      <li><a href="/#process">Process</a></li>
       <li><a href="../contact.html" class="nav-cta">Hire Me</a></li>
     </ul>
   </nav>
 
   <article class="content-page longform-article" id="main-content">
     <nav class="breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a> <span aria-hidden="true">/</span>
+      <a href="/">Home</a> <span aria-hidden="true">/</span>
       <a href="./">Blog</a> <span aria-hidden="true">/</span>
       <span aria-current="page">{headline}</span>
     </nav>
@@ -186,7 +186,7 @@ def render_page(article):
         </ul>
       </div>
     </div>
-    <p>&copy; 2026 <a href="../index.html">Malik Taleeb Shahbaz</a> · Web Developer &amp; Software Engineer.</p>
+    <p>&copy; 2026 <a href="/">Malik Taleeb Shahbaz</a> · Web Developer &amp; Software Engineer.</p>
   </footer>
 
   <a href="{WHATSAPP}" class="sticky-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
