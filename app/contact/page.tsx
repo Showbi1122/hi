@@ -16,7 +16,6 @@ import {
   WHATSAPP_LINK,
   WHATSAPP_PHONE,
 } from "@/lib/site";
-import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
@@ -205,13 +204,13 @@ export default function ContactPage() {
             <div className="row items-center">
               <div className="col-lg-6 align-self-center">
                 <div className="map mr-lg-4">
-                  <Image
-                    src="/assets/contact/abbottabad-map.webp"
-                    alt="Abbottabad, Pakistan location map"
-                    width={640}
-                    height={480}
-                    className="contact-map-img"
-                    priority
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3965.3217973168576!2d73.19504884342042!3d34.15866900452358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2s!4v1784058894575!5m2!1sen!2s"
+                    title="Malik Taleeb Shahbaz location — Abbottabad, Pakistan"
+                    className="contact-map-embed"
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
                   />
                 </div>
               </div>
