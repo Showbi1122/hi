@@ -1,4 +1,4 @@
-import type { FaqItem } from "@/lib/data/faqs";
+import type { FaqItem } from "@/data/faqs";
 import { Reveal } from "@/components/ui/Reveal";
 import Link from "next/link";
 
@@ -9,14 +9,17 @@ type FaqListProps = {
 
 export function FaqList({ items, linkify = false }: FaqListProps) {
   return (
-    <div className="space-y-2">
+    <div className="glint-faq">
       {items.map((item, index) => (
         <Reveal key={item.question} delay={index * 0.04}>
-          <details className="group rounded-[14px] border border-border bg-surface px-5 py-1 open:border-border-gold">
-            <summary className="cursor-pointer list-none py-4 font-semibold text-zinc-100 marker:content-none">
-              {item.question}
+          <details className="faq-item group">
+            <summary>
+              <span>{item.question}</span>
+              <span className="faq-plus" aria-hidden>
+                +
+              </span>
             </summary>
-            <div className="pb-4 text-sm leading-relaxed text-muted">
+            <div className="faq-body">
               {linkify ? <FaqAnswer text={item.answer} /> : item.answer}
             </div>
           </details>
@@ -30,7 +33,7 @@ function FaqAnswer({ text }: { text: string }) {
   if (text.includes("custom websites")) {
     return (
       <>
-        <Link href="/services" className="text-gold-light hover:underline">
+        <Link href="/services" className="text-[#08d665] hover:underline">
           Custom websites
         </Link>
         {text.replace(/^Custom websites,?\s*/i, ", ")}

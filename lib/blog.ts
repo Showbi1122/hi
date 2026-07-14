@@ -48,11 +48,12 @@ export type BlogPost = BlogPostMeta & {
   content: string;
 };
 
-const postCache = new Map<string, BlogPost>();
+const postCache = new Map<string, { mtimeMs: number; post: BlogPost }>();
 
 function parsePost(filePath: string): BlogPost {
+  const mtimeMs = fs.statSync(filePath).mtimeMs;
   const cached = postCache.get(filePath);
-  if (cached) return cached;
+  if (cached && cached.mtimeMs === mtimeMs) return cached.post;
 
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
@@ -79,7 +80,7 @@ function parsePost(filePath: string): BlogPost {
     content: content.trim(),
   };
 
-  postCache.set(filePath, post);
+  postCache.set(filePath, { mtimeMs, post });
   return post;
 }
 

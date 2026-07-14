@@ -5,7 +5,6 @@ import {
   defaultBreadcrumbSchema,
 } from "@/components/layout/ContentPageLayout";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { getAllBlogSlugs, getBlogPost } from "@/lib/blog";
 import { createPageMetadata } from "@/lib/metadata";
@@ -112,7 +111,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           <Reveal>
             <footer className="article-conclusion mt-12">
-              <h2 className="mb-4 font-display text-2xl text-zinc-100">
+              <h2 className="mb-4 font-display text-2xl text-white">
                 Need Help Building Your Website?
               </h2>
               <p
@@ -120,10 +119,17 @@ export default async function BlogPostPage({ params }: PageProps) {
                 dangerouslySetInnerHTML={{ __html: post.ctaText }}
               />
               <div className="flex flex-wrap gap-3">
-                <Button href="/contact">Start a Conversation</Button>
-                <Button href={WHATSAPP_LINK} variant="glass" external>
-                  WhatsApp
-                </Button>
+                <Link href="/contact" className="cbtn cbnt1">
+                  Start a Conversation <span className="cbtn-ico">→</span>
+                </Link>
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="cbtn cbnt1 !bg-transparent border border-white/20"
+                >
+                  WhatsApp <span className="cbtn-ico">→</span>
+                </a>
               </div>
             </footer>
           </Reveal>

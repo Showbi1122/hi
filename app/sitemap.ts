@@ -1,5 +1,5 @@
 import { getAllBlogPosts } from "@/lib/blog";
-import { getAllGeoSlugs } from "@/lib/data/geo";
+import { getAllGeoSlugs } from "@/data/geo";
 import { SITE_URL } from "@/lib/site";
 import type { MetadataRoute } from "next";
 

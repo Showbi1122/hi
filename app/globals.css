@@ -5,115 +5,102 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: calc(76px + 24px);
+    scroll-padding-top: 120px;
   }
 
   body {
-    @apply min-h-screen overflow-x-hidden bg-bg font-body text-zinc-100 antialiased;
-  }
-
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 9998;
-    opacity: 0.4;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    @apply min-h-screen overflow-x-hidden bg-[#0b0d0e] font-body text-white antialiased;
+    background-color: #0b0d0e;
   }
 
   ::selection {
-    @apply bg-gold/30 text-white;
+    @apply bg-gold/35 text-white;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-gold;
   }
 }
 
 @layer components {
-  .gradient-text {
-    @apply bg-gradient-to-br from-gold-light via-gold to-violet-light bg-clip-text text-transparent;
-    background-size: 200% auto;
-    animation: shimmer 4s linear infinite;
+  .filltext {
+    @apply pointer-events-none absolute left-0 top-0 select-none font-display text-[clamp(4rem,12vw,9rem)] font-bold uppercase leading-none tracking-[-0.04em] text-white/[0.04];
   }
 
-  .glass-card {
-    @apply relative overflow-hidden rounded-[20px] border border-border bg-surface backdrop-blur-xl;
-    transition:
-      border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-      box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  .cbtn {
+    @apply relative inline-flex items-center gap-0 overflow-hidden rounded-sm border border-transparent bg-gold px-6 py-[13px] pr-[70px] text-sm font-medium uppercase tracking-wide text-white transition-all duration-300;
   }
 
-  .content-body {
-    @apply grid gap-8;
+  .cbtn-icon {
+    @apply absolute right-[15px] top-1/2 flex h-[30px] w-[30px] -translate-y-1/2 items-center justify-center rounded-sm bg-white text-base text-gold transition-colors duration-300;
   }
 
-  .content-card h2 {
-    @apply mb-4 font-display text-[1.45rem] leading-snug text-zinc-100;
+  .cbtn:hover {
+    @apply border-gold-light bg-transparent text-gold-light;
   }
 
-  .content-card h3 {
-    @apply mb-2.5 mt-6 text-lg text-gold-light first:mt-0;
+  .cbtn:hover .cbtn-icon {
+    @apply bg-gold text-white;
   }
 
-  .content-card p {
-    @apply mb-[18px] text-[1.02rem] leading-[1.8] text-muted last:mb-0;
+  .editorial-block {
+    @apply border-b border-border py-10 first:pt-0 last:border-b-0 last:pb-0;
   }
 
-  .content-card strong {
-    @apply font-semibold text-zinc-100;
+  .editorial-block h2 {
+    @apply mb-4 font-display text-[1.75rem] font-semibold uppercase tracking-tight text-white md:text-[2rem];
   }
 
-  .content-card ul,
-  .content-card ol {
-    @apply mb-4 space-y-2 pl-5 text-[0.95rem] leading-[1.8] text-muted last:mb-0;
+  .editorial-block ul,
+  .editorial-block ol {
+    @apply mb-4 space-y-2.5 pl-5 text-base leading-[1.85] text-muted last:mb-0;
   }
 
-  .content-card ul {
+  .editorial-block ul {
     @apply list-disc;
   }
 
-  .content-card ol {
+  .editorial-block ol {
     @apply list-decimal;
   }
 
-  .content-card a {
-    @apply text-gold-light no-underline transition-colors hover:underline;
-    text-underline-offset: 3px;
+  .editorial-block p {
+    @apply mb-4 text-base leading-[1.9] text-muted last:mb-0;
   }
 
-  .section-label {
-    @apply mb-3 inline-block rounded-full border border-border-gold bg-gold-dim px-3.5 py-1.5 text-[0.72rem] font-bold uppercase tracking-[0.16em] text-gold;
+  .editorial-block a {
+    @apply text-gold transition-colors hover:text-gold-light;
+  }
+
+  .editorial-block strong {
+    @apply font-semibold text-white;
   }
 
   .prose-blog {
-    @apply prose prose-invert max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-gold-light prose-a:no-underline hover:prose-a:underline prose-p:text-muted prose-li:text-muted prose-strong:text-zinc-100 prose-code:before:content-none prose-code:after:content-none;
+    @apply prose prose-invert max-w-none prose-headings:font-display prose-headings:uppercase prose-headings:tracking-tight prose-a:text-gold prose-a:no-underline hover:prose-a:text-gold-light prose-p:text-muted prose-li:text-muted prose-strong:text-white prose-code:before:content-none prose-code:after:content-none;
   }
 
   .prose-blog .quick-answer {
-    @apply mb-8 rounded-[14px] border border-border-gold bg-gold-dim p-5 md:p-6;
+    @apply mb-8 rounded-sm border border-gold/30 bg-gold-dim p-6;
   }
 
   .prose-blog .quick-answer h2 {
-    @apply mb-2.5 text-xs font-bold uppercase tracking-widest text-gold;
+    @apply mb-2.5 text-xs font-bold uppercase tracking-[0.16em] text-gold;
   }
 
   .prose-blog .quick-answer p {
-    @apply m-0 text-base leading-relaxed text-zinc-100;
+    @apply m-0 text-base leading-relaxed text-white;
   }
 
-  .prose-blog .key-takeaways {
-    @apply my-8 rounded-[14px] border border-border bg-surface p-6 md:p-7;
+  .prose-blog .key-takeaways,
+  .prose-blog .toc,
+  .prose-blog .definition-box {
+    @apply my-8 rounded-sm border border-border bg-surface p-6;
   }
 
-  .prose-blog .key-takeaways h2 {
-    @apply mb-3.5 text-base text-zinc-100;
-  }
-
-  .prose-blog .toc {
-    @apply mb-8 rounded-[14px] border border-border bg-surface p-5 md:p-6;
-  }
-
+  .prose-blog .key-takeaways h2,
   .prose-blog .toc h2 {
-    @apply mb-3 text-sm text-zinc-100;
+    @apply mb-3.5 text-base text-white;
   }
 
   .prose-blog .toc ol {
@@ -121,19 +108,15 @@
   }
 
   .prose-blog .expert-insight {
-    @apply my-7 border-l-[3px] border-gold py-4 pl-6;
+    @apply my-8 border-l-[3px] border-gold py-4 pl-6;
   }
 
   .prose-blog .expert-insight p {
-    @apply m-0 italic text-zinc-100;
-  }
-
-  .prose-blog .definition-box {
-    @apply my-6 rounded-[14px] border border-border bg-glass p-5 md:p-6;
+    @apply m-0 italic text-white;
   }
 
   .prose-blog .definition-box dt {
-    @apply mb-1.5 font-bold text-gold-light;
+    @apply mb-1.5 font-bold text-gold;
   }
 
   .prose-blog .definition-box dd {
@@ -146,11 +129,11 @@
 
   .prose-blog .compare-table th,
   .prose-blog .compare-table td {
-    @apply border border-border px-3 py-2.5 text-left align-top md:px-4;
+    @apply border border-border px-3 py-2.5 text-left align-top;
   }
 
   .prose-blog .compare-table th {
-    @apply bg-surface font-semibold text-gold-light;
+    @apply bg-surface font-semibold text-gold;
   }
 
   .prose-blog .compare-table td {
@@ -158,74 +141,21 @@
   }
 
   .prose-blog .article-section h2 {
-    @apply mb-4 font-display text-2xl text-zinc-100 md:text-[1.55rem];
+    @apply mb-4 font-display text-2xl uppercase tracking-tight text-white md:text-[1.75rem];
   }
 
   .prose-blog .article-section h3 {
-    @apply mb-3 mt-7 text-lg text-gold-light;
+    @apply mb-3 mt-8 text-lg text-gold;
   }
 
   .prose-blog .article-conclusion {
-    @apply mt-12 rounded-[20px] border border-border-gold bg-surface p-8 md:p-9;
+    @apply mt-14 rounded-sm border border-border bg-surface p-8 md:p-10;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
-  }
-}
-
-@layer base {
-  .reveal-item {
-    opacity: 0;
-    transform: translateY(28px);
-    transition:
-      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: opacity, transform;
-  }
-
-  .reveal-item.is-visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  .animate-up {
-    opacity: 0;
-    transform: translateY(28px);
-    animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-
-  @keyframes revealUp {
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal-item,
-  .animate-up {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-    transition: none !important;
-  }
-}
-
-@media (pointer: fine) {
-  body.custom-cursor,
-  body.custom-cursor a,
-  body.custom-cursor button,
-  body.custom-cursor summary {
-    cursor: none !important;
-  }
-
-  body.custom-cursor header,
-  body.custom-cursor header * {
-    cursor: pointer !important;
   }
 }
 

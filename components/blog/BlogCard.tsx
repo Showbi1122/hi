@@ -23,41 +23,30 @@ export function BlogCard({
   imageAlt,
 }: BlogCardProps) {
   return (
-    <Reveal>
-      <Link
-        href={href}
-        className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-border bg-surface transition-all duration-300 ease-premium hover:-translate-y-1 hover:border-border-gold hover:shadow-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
-      >
-        <div className="relative aspect-video w-full shrink-0 overflow-hidden rounded-t-[20px]">
+    <Reveal className="h-full">
+      <article className="single-blog">
+        <div className="single-blog-img">
           <Image
             src={featuredImage}
             alt={imageAlt}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-            className="object-cover transition-transform duration-300 ease-premium group-hover:scale-105"
+            width={640}
+            height={400}
+            className="object-cover"
             loading="lazy"
           />
-          <div
-            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#0e0e16] via-[#0e0e16]/50 to-[#050508]/20"
-            aria-hidden
-          />
+          <span className="blog-banner">{category}</span>
         </div>
-
-        <div className="flex min-h-0 flex-1 flex-col p-6 md:p-7">
-          <span className="mb-2.5 text-[0.72rem] font-bold uppercase tracking-wider text-gold">
-            {category}
-          </span>
-          <h3 className="mb-3 line-clamp-3 font-display text-lg leading-snug text-zinc-100 transition-colors duration-300 group-hover:text-gold-light">
+        <div className="blog-description">
+          <p>{readTime ? readTime : "Article"}</p>
+          <Link href={href} className="blog-title">
             {title}
-          </h3>
-          <p className="mb-4 line-clamp-2 text-sm leading-relaxed text-muted">
-            {description}
-          </p>
-          <span className="mt-auto text-sm font-semibold text-gold-light transition-colors duration-300 group-hover:text-gold">
-            {readTime ? `${readTime} · Read article →` : "Read article →"}
-          </span>
+          </Link>
+          <p className="mb-4 line-clamp-2 !normal-case !text-[#666]">{description}</p>
+          <Link href={href} className="readmore-btn">
+            <span className="arrow">→</span> read more
+          </Link>
         </div>
-      </Link>
+      </article>
     </Reveal>
   );
 }

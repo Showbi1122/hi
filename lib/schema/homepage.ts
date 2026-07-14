@@ -1,5 +1,5 @@
 import { AUTHOR, OG_IMAGE, SITE_URL, absoluteUrl } from "@/lib/site";
-import { homepageFaqs } from "@/lib/data/faqs";
+import { homepageFaqs } from "@/data/faqs";
 
 const areaServed = [
   "United States",

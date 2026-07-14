@@ -1,21 +1,21 @@
-import { CustomCursor } from "@/components/ui/CustomCursor";
-import { Footer } from "@/components/layout/Footer";
 import { StickyWhatsApp } from "@/components/layout/StickyWhatsApp";
 import { GOOGLE_SITE_VERIFICATION } from "@/lib/site";
 import type { Metadata } from "next";
-import { Inter, Sora } from "next/font/google";
+import { Oswald, Rubik } from "next/font/google";
 import "./globals.css";
+import "./glint-theme.css";
 
-const inter = Inter({
+const rubik = Rubik({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-rubik",
   display: "swap",
 });
 
-const sora = Sora({
+const oswald = Oswald({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  variable: "--font-sora",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-oswald",
   display: "swap",
 });
 
@@ -43,21 +43,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="ltr">
-      <head>
-        <noscript>
-          <style>{`.reveal-item{opacity:1!important;transform:none!important}`}</style>
-        </noscript>
-      </head>
-      <body className={`${inter.variable} ${sora.variable} font-body`}>
+      <body className={`${rubik.variable} ${oswald.variable} font-body`}>
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[10002] focus:rounded-lg focus:bg-gold focus:px-5 focus:py-3 focus:font-bold focus:text-bg"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[10002] focus:rounded-sm focus:bg-gold focus:px-5 focus:py-3 focus:font-bold focus:text-bg"
         >
           Skip to main content
         </a>
         {children}
         <StickyWhatsApp />
-        <CustomCursor />
       </body>
     </html>
   );
