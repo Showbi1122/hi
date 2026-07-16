@@ -13,6 +13,7 @@ import {
   LINKEDIN_URL,
   WHATSAPP_LINK,
 } from "@/lib/site";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata = createPageMetadata({
@@ -72,7 +73,6 @@ function ProjectCase({ project, index }: { project: Project; index: number }) {
   const problem = project.caseStudy.find((f) => f.label === "Problem")?.value;
   const solution = project.caseStudy.find((f) => f.label === "Solution")?.value;
   const img = fullImage(project.image);
-  const thumb = project.image;
 
   return (
     <article
@@ -80,58 +80,20 @@ function ProjectCase({ project, index }: { project: Project; index: number }) {
       className={`single-portfolio-block${index > 0 ? " single-portfolio-block--spaced" : ""}`}
     >
       <div className="row portfolio-list2 items-center">
-        <div className="col-md-8">
+        <div className="col-md-12">
           <div className="portfolio-wrap">
-            <div
-              className="single-portfolio-item single-portfolio-item2"
-              style={{ backgroundImage: `url(${img})` }}
-              role="img"
-              aria-label={project.imageAlt}
-            >
+            <div className="single-portfolio-item single-portfolio-item2">
+              <Image
+                src={img}
+                alt={project.imageAlt}
+                width={1200}
+                height={800}
+                className="portfolio-item-img"
+              />
               <div className="portfolio-hover">
                 <div className="portfolio-hover-table">
                   <div className="portfolio-hover-table-cell">
                     <span>{project.title}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-md-4">
-          <div className="portfolio-wrap">
-            <div
-              className="single-portfolio-item small"
-              style={{
-                backgroundImage: `url(${thumb})`,
-                backgroundPosition: "top center",
-              }}
-              role="img"
-              aria-hidden
-            >
-              <div className="portfolio-hover">
-                <div className="portfolio-hover-table">
-                  <div className="portfolio-hover-table-cell">
-                    <span>{project.tags[0]}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="portfolio-wrap">
-            <div
-              className="single-portfolio-item small"
-              style={{
-                backgroundImage: `url(${thumb})`,
-                backgroundPosition: "bottom center",
-              }}
-              role="img"
-              aria-hidden
-            >
-              <div className="portfolio-hover">
-                <div className="portfolio-hover-table">
-                  <div className="portfolio-hover-table-cell">
-                    <span>{project.industry}</span>
                   </div>
                 </div>
               </div>

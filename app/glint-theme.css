@@ -1946,17 +1946,35 @@ button.subscribe-btn:disabled {
 .single-portfolio-item {
   height: 310px;
   width: 100%;
-  background-size: cover;
+  background-color: #f4f5f6;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   position: relative;
   z-index: 2;
   margin: 15px 0;
   overflow: hidden;
   box-shadow: 3px 4px 13px #f2f2f2;
+  border-radius: 4px;
 }
 
 .single-portfolio-item2 {
-  height: 520px;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  max-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-item-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
 }
 
 .single-portfolio-item.small {
@@ -2092,7 +2110,8 @@ img.inner-shape2 {
 
 @media (max-width: 767px) {
   .single-portfolio-item2 {
-    height: 360px;
+    max-height: 320px;
+    aspect-ratio: 4 / 3;
   }
   .single-portfolio-item.small {
     height: 200px;
