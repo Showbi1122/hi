@@ -88,7 +88,7 @@ export const projects: Project[] = [
     industry: "Creative / Professional Services",
     image: "/assets/projects/port-folio-600.webp",
     imageAlt:
-      "Malik Taleeb Shahbaz — custom portfolio website development showcase",
+      "Custom portfolio website development project screenshot",
     caseStudy: [
       {
         label: "Problem",

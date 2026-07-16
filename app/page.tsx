@@ -155,17 +155,19 @@ export default function HomePage() {
             <ul id="da-thumbs" className="da-thumbs portfolio-carousel">
               {projects.map((project) => (
                 <li key={project.id}>
-                  <Link href="/projects">
-                    <Image
-                      src={project.image}
-                      alt={project.imageAlt}
-                      width={600}
-                      height={420}
-                      className="object-cover"
-                    />
-                    <div className="hover-overlay">
+                  <Link href={`/projects#${project.slug}`} className="project-card-link">
+                    <span className="single-portfolio-item single-portfolio-item2 project-card-box">
+                      <Image
+                        src={project.image.replace("-600.webp", ".webp")}
+                        alt={project.imageAlt}
+                        width={1200}
+                        height={800}
+                        className="portfolio-item-img"
+                      />
+                    </span>
+                    <span className="hover-overlay">
                       <span>{project.title}</span>
-                    </div>
+                    </span>
                   </Link>
                 </li>
               ))}
