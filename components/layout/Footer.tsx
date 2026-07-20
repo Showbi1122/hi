@@ -1,3 +1,4 @@
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { footerColumns } from "@/data/footer";
 import Link from "next/link";
 
@@ -15,14 +16,13 @@ export function Footer() {
                 {column.links.map((link) => (
                   <li key={link.label}>
                     {"external" in link && link.external ? (
-                      <a
+                      <TrackedLink
                         href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        location="footer"
                         className="text-sm text-[#999] transition-colors hover:text-white"
                       >
                         {link.label}
-                      </a>
+                      </TrackedLink>
                     ) : (
                       <Link
                         href={link.href}

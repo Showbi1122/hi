@@ -1,3 +1,4 @@
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { BlogCard } from "@/components/blog/BlogCard";
 import { FaqList } from "@/components/content/FaqList";
 import { AboutSection } from "@/components/sections/AboutSection";
@@ -342,9 +343,9 @@ export default function HomePage() {
                 <Link href="/contact" className="subscribe-btn">
                   Hire Me <span className="cbtn-ico">→</span>
                 </Link>
-                <Link href={WHATSAPP_LINK} className="cbtn cbnt1" target="_blank" rel="noopener noreferrer">
+                <TrackedLink href={WHATSAPP_LINK} location="home_cta" className="cbtn cbnt1">
                   WhatsApp <span className="cbtn-ico">→</span>
-                </Link>
+                </TrackedLink>
               </div>
             </div>
           </div>
@@ -376,24 +377,23 @@ export default function HomePage() {
                 MVP? Message me on WhatsApp or LinkedIn. I reply within 24 hours.
               </p>
               <div className="mb-10 flex flex-wrap gap-4">
-                <Link href={WHATSAPP_LINK} className="cbtn cbnt1" target="_blank" rel="noopener noreferrer">
+                <TrackedLink href={WHATSAPP_LINK} location="home_contact" className="cbtn cbnt1">
                   WhatsApp — Fastest Reply <span className="cbtn-ico">→</span>
-                </Link>
-                <Link href={LINKEDIN_URL} className="cbtn cbnt1" target="_blank" rel="noopener noreferrer">
+                </TrackedLink>
+                <TrackedLink href={LINKEDIN_URL} location="home_contact" className="cbtn cbnt1">
                   Contact on LinkedIn <span className="cbtn-ico">→</span>
-                </Link>
+                </TrackedLink>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-2">
                 {[LINKEDIN_URL, GITHUB_URL, WHATSAPP_LINK, INSTAGRAM_URL].map((href) => (
-                  <a
+                  <TrackedLink
                     key={href}
                     href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    location="home_contact"
                     className="text-sm font-medium uppercase tracking-[0.1em] text-white/60 transition-colors hover:text-[#08d665]"
                   >
                     {socialLabel(href)}
-                  </a>
+                  </TrackedLink>
                 ))}
               </div>
             </Reveal>

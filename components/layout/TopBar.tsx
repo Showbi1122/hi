@@ -1,3 +1,4 @@
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { AUTHOR } from "@/lib/site";
 import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL, WHATSAPP_LINK } from "@/lib/site";
 import Link from "next/link";
@@ -63,15 +64,14 @@ export function TopBar() {
                 <ul>
                   {socials.map((s) => (
                     <li key={s.href}>
-                      <a
+                      <TrackedLink
                         href={s.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        location="topbar"
                         aria-label={s.label}
                         title={s.label}
                       >
                         {s.icon}
-                      </a>
+                      </TrackedLink>
                     </li>
                   ))}
                 </ul>

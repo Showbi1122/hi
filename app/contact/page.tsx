@@ -1,3 +1,4 @@
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { InnerPageHero } from "@/components/layout/InnerPageHero";
 import { Footer } from "@/components/layout/Footer";
@@ -9,6 +10,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import { KEYWORDS } from "@/lib/seo/keywords";
 import {
   AUTHOR,
+  CONTACT_EMAIL,
   GITHUB_URL,
   INSTAGRAM_URL,
   LINKEDIN_URL,
@@ -158,13 +160,9 @@ export default function ContactPage() {
                       <a href={`tel:+${WHATSAPP_PHONE}`}>{phoneDisplay}</a>
                     </li>
                     <li>
-                      <a
-                        href={WHATSAPP_LINK}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <TrackedLink href={WHATSAPP_LINK} location="contact_card">
                         WhatsApp chat
-                      </a>
+                      </TrackedLink>
                     </li>
                   </ul>
                 </div>
@@ -177,23 +175,25 @@ export default function ContactPage() {
                   <h4>Connect</h4>
                   <ul>
                     <li>
-                      <a
-                        href={LINKEDIN_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <TrackedLink href={LINKEDIN_URL} location="contact_card">
                         LinkedIn
-                      </a>
+                      </TrackedLink>
                     </li>
                     <li>
-                      <a
-                        href={GITHUB_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
+                      <TrackedLink href={GITHUB_URL} location="contact_card">
                         GitHub
-                      </a>
+                      </TrackedLink>
                     </li>
+                    {CONTACT_EMAIL ? (
+                      <li>
+                        <TrackedLink
+                          href={`mailto:${CONTACT_EMAIL}`}
+                          location="contact_card"
+                        >
+                          {CONTACT_EMAIL}
+                        </TrackedLink>
+                      </li>
+                    ) : null}
                   </ul>
                 </div>
               </div>
@@ -258,14 +258,13 @@ export default function ContactPage() {
                 </div>
                 <div className="space-40" />
                 <div className="cta-form cta-form-centered">
-                  <a
+                  <TrackedLink
                     href={WHATSAPP_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    location="contact_cta"
                     className="subscribe-btn"
                   >
                     WhatsApp <i className="cbtn-ico">→</i>
-                  </a>
+                  </TrackedLink>
                   <Link href="/projects" className="cbtn cbnt1">
                     View projects <i className="cbtn-ico">→</i>
                   </Link>
@@ -281,10 +280,9 @@ export default function ContactPage() {
                   <div key={s.href} className="col-social">
                     <div className="single-social">
                       <div className="sinlge-social-hover">
-                        <a
+                        <TrackedLink
                           href={s.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          location="contact_social"
                           aria-label={s.label}
                         >
                           <span className="single-social-icon">{s.icon}</span>
@@ -293,7 +291,7 @@ export default function ContactPage() {
                             <br />
                             {s.label}
                           </p>
-                        </a>
+                        </TrackedLink>
                       </div>
                     </div>
                   </div>

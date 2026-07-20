@@ -1,3 +1,5 @@
+import { ResumeDownloadButton } from "@/components/analytics/ResumeDownloadButton";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { InnerPageHero } from "@/components/layout/InnerPageHero";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
@@ -245,14 +247,14 @@ export default function AboutPage() {
                   <Link href="/contact" className="subscribe-btn">
                     Contact Me <i className="cbtn-ico">→</i>
                   </Link>
-                  <a
+                  <ResumeDownloadButton location="about_cta" />
+                  <TrackedLink
                     href={WHATSAPP_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    location="about_cta"
                     className="cbtn cbnt1"
                   >
                     WhatsApp <i className="cbtn-ico">→</i>
-                  </a>
+                  </TrackedLink>
                 </div>
               </div>
             </div>
@@ -266,14 +268,14 @@ export default function AboutPage() {
                   <div key={s.href} className="col-social">
                     <div className="single-social">
                       <div className="sinlge-social-hover">
-                        <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}>
+                        <TrackedLink href={s.href} location="about_social" aria-label={s.label}>
                           <span className="single-social-icon">{s.icon}</span>
                           <p className="single-soicial-text">
                             Join on
                             <br />
                             {s.label}
                           </p>
-                        </a>
+                        </TrackedLink>
                       </div>
                     </div>
                   </div>

@@ -1,3 +1,5 @@
+import { ProjectViewsTracker } from "@/components/analytics/ProjectViewsTracker";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { InnerPageHero } from "@/components/layout/InnerPageHero";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
@@ -209,6 +211,7 @@ export default function ProjectsPage() {
               <ProjectCase key={project.id} project={project} index={index} />
             ))}
           </div>
+          <ProjectViewsTracker projects={projects} />
           {/* decorative shapes like Glint */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/ui/service-bg.svg" alt="" className="inner-shape1" />
@@ -232,14 +235,13 @@ export default function ProjectsPage() {
                   <Link href="/contact" className="subscribe-btn">
                     Contact Me <i className="cbtn-ico">→</i>
                   </Link>
-                  <a
+                  <TrackedLink
                     href={WHATSAPP_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    location="projects_cta"
                     className="cbtn cbnt1"
                   >
                     WhatsApp <i className="cbtn-ico">→</i>
-                  </a>
+                  </TrackedLink>
                 </div>
               </div>
             </div>
@@ -252,10 +254,9 @@ export default function ProjectsPage() {
                   <div key={s.href} className="col-social">
                     <div className="single-social">
                       <div className="sinlge-social-hover">
-                        <a
+                        <TrackedLink
                           href={s.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          location="projects_social"
                           aria-label={s.label}
                         >
                           <span className="single-social-icon">{s.icon}</span>
@@ -264,7 +265,7 @@ export default function ProjectsPage() {
                             <br />
                             {s.label}
                           </p>
-                        </a>
+                        </TrackedLink>
                       </div>
                     </div>
                   </div>

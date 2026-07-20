@@ -1,3 +1,5 @@
+import { BlogEngagement } from "@/components/analytics/BlogEngagement";
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { BlogHtmlContent } from "@/components/blog/BlogHtmlContent";
 import { FaqList } from "@/components/content/FaqList";
 import {
@@ -95,6 +97,11 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
         }
       >
+        <BlogEngagement
+          slug={post.slug}
+          title={post.headline}
+          tag={post.tag}
+        />
         <div className="max-w-article">
           <p className="mb-2 text-sm text-muted">
             {post.readingTime} · By Malik Taleeb Shahbaz · Updated{" "}
@@ -122,14 +129,20 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <Link href="/contact" className="cbtn cbnt1">
                   Start a Conversation <span className="cbtn-ico">→</span>
                 </Link>
-                <a
+                <TrackedLink
                   href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  location="blog_post_cta"
                   className="cbtn cbnt1 !bg-transparent border border-white/20"
                 >
                   WhatsApp <span className="cbtn-ico">→</span>
-                </a>
+                </TrackedLink>
+                <TrackedLink
+                  href={LINKEDIN_URL}
+                  location="blog_post_cta"
+                  className="cbtn cbnt1 !bg-transparent border border-white/20"
+                >
+                  LinkedIn <span className="cbtn-ico">→</span>
+                </TrackedLink>
               </div>
             </footer>
           </Reveal>

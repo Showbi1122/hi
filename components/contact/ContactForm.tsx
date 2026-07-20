@@ -1,5 +1,6 @@
 "use client";
 
+import { trackContactFormSubmit } from "@/lib/analytics";
 import { WHATSAPP_PHONE } from "@/lib/site";
 import { useState } from "react";
 
@@ -22,6 +23,11 @@ export function ContactForm({ variant = "glint" }: ContactFormProps) {
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? data.get("contact") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
+
+    trackContactFormSubmit({
+      form_variant: variant,
+      has_email: Boolean(email),
+    });
 
     const lines = [
       "Hi Malik, I'm interested in hiring you for a web development project.",

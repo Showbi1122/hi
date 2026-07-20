@@ -1,3 +1,4 @@
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import { InnerPageHero } from "@/components/layout/InnerPageHero";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
@@ -288,14 +289,13 @@ export default function ServicesPage() {
                   <Link href="/contact" className="subscribe-btn">
                     Contact Me <i className="cbtn-ico">→</i>
                   </Link>
-                  <a
+                  <TrackedLink
                     href={WHATSAPP_LINK}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    location="services_cta"
                     className="cbtn cbnt1"
                   >
                     WhatsApp <i className="cbtn-ico">→</i>
-                  </a>
+                  </TrackedLink>
                 </div>
               </div>
             </div>
@@ -308,19 +308,18 @@ export default function ServicesPage() {
                   <div key={s.href} className="col-social">
                     <div className="single-social">
                       <div className="sinlge-social-hover">
-                        <a
+                        <TrackedLink
                           href={s.href}
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label={s.label}
-                        >
+                         location="services_social">
                           <span className="single-social-icon">{s.icon}</span>
                           <p className="single-soicial-text">
                             Join on
                             <br />
                             {s.label}
-                          </p>
-                        </a>
+                          </p></TrackedLink>
                       </div>
                     </div>
                   </div>

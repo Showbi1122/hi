@@ -1,5 +1,6 @@
 "use client";
 
+import { TrackedLink } from "@/components/analytics/TrackedLink";
 import {
   getNavItems,
   isNavActive,
@@ -169,9 +170,9 @@ export function Navbar({ active }: NavbarProps) {
             <ul>
               {socials.map((s) => (
                 <li key={s.href}>
-                  <a href={s.href} target="_blank" rel="noopener noreferrer">
+                  <TrackedLink href={s.href} location="navbar_side">
                     {s.label}
-                  </a>
+                  </TrackedLink>
                 </li>
               ))}
             </ul>

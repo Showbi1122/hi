@@ -34,6 +34,12 @@ export const GOOGLE_SITE_VERIFICATION = "Gw7r1otlfmraHwdP_SsMbxKxDD6q7ca3YXWO6ZF
 export const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? "";
 
+/** Optional public resume / CV URL for download tracking */
+export const RESUME_URL = process.env.NEXT_PUBLIC_RESUME_URL?.trim() ?? "";
+
+/** Optional public contact email for mailto tracking */
+export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() ?? "";
+
 export const OG_IMAGE = "/assets/home/og-image.webp";
 
 export function absoluteUrl(path: string): string {
