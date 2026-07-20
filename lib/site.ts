@@ -30,9 +30,17 @@ export const INSTAGRAM_URL = "https://www.instagram.com/malik.taleeb.7/";
 
 export const GOOGLE_SITE_VERIFICATION = "Gw7r1otlfmraHwdP_SsMbxKxDD6q7ca3YXWO6ZFvJ9E";
 
-/** GA4 Measurement ID — set via NEXT_PUBLIC_GA_MEASUREMENT_ID */
+/**
+ * GA4 Measurement ID (public by design — it ships in the browser HTML).
+ *
+ * NEXT_PUBLIC_* values are inlined at *build* time. Production previously
+ * shipped an empty string because Vercel had no NEXT_PUBLIC_GA_MEASUREMENT_ID,
+ * and the layout skipped `<GoogleAnalytics />` when the ID was falsy — so
+ * View Source had no googletagmanager tag at all. Default to the real ID so
+ * a missing env var cannot silently disable analytics.
+ */
 export const GA_MEASUREMENT_ID =
-  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? "";
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "G-NWBZZ23DVZ";
 
 /** Optional public resume / CV URL for download tracking */
 export const RESUME_URL = process.env.NEXT_PUBLIC_RESUME_URL?.trim() ?? "";

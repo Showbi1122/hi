@@ -1,7 +1,13 @@
 "use client";
 
 import { GA_MEASUREMENT_ID } from "@/lib/site";
-import { sendGAEvent } from "@next/third-parties/google";
+
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
 export const GA_EVENTS = {
   blog_view: "blog_view",
@@ -44,7 +50,7 @@ export function trackEvent(
   }
 
   try {
-    sendGAEvent("event", eventName, payload);
+    window.gtag?.("event", eventName, payload);
   } catch {
     // Never break UX if analytics fails
   }

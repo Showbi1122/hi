@@ -1,6 +1,6 @@
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 import { StickyWhatsApp } from "@/components/layout/StickyWhatsApp";
 import { GA_MEASUREMENT_ID, GOOGLE_SITE_VERIFICATION } from "@/lib/site";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Oswald, Rubik } from "next/font/google";
 import "./globals.css";
@@ -42,21 +42,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  if (process.env.NODE_ENV === "development") {
-    // console.warn survives next.config compiler.removeConsole (log is stripped)
-    console.warn(
-      "[GA] NEXT_PUBLIC_GA_MEASUREMENT_ID →",
-      GA_MEASUREMENT_ID || "(empty)",
-    );
-    console.warn(
-      "[GA] raw process.env →",
-      process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "(empty)",
-    );
-  }
-
   return (
     <html lang="en" dir="ltr">
       <body className={`${rubik.variable} ${oswald.variable} font-body`}>
+        <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[10002] focus:rounded-sm focus:bg-gold focus:px-5 focus:py-3 focus:font-bold focus:text-bg"
@@ -65,9 +54,6 @@ export default function RootLayout({
         </a>
         {children}
         <StickyWhatsApp />
-        {GA_MEASUREMENT_ID ? (
-          <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
-        ) : null}
       </body>
     </html>
   );
