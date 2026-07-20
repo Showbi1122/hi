@@ -30,6 +30,10 @@ export const INSTAGRAM_URL = "https://www.instagram.com/malik.taleeb.7/";
 
 export const GOOGLE_SITE_VERIFICATION = "Gw7r1otlfmraHwdP_SsMbxKxDD6q7ca3YXWO6ZFvJ9E";
 
+/** GA4 Measurement ID — set via NEXT_PUBLIC_GA_MEASUREMENT_ID */
+export const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() ?? "";
+
 export const OG_IMAGE = "/assets/home/og-image.webp";
 
 export function absoluteUrl(path: string): string {

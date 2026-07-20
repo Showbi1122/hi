@@ -1,5 +1,6 @@
 import { StickyWhatsApp } from "@/components/layout/StickyWhatsApp";
-import { GOOGLE_SITE_VERIFICATION } from "@/lib/site";
+import { GA_MEASUREMENT_ID, GOOGLE_SITE_VERIFICATION } from "@/lib/site";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Oswald, Rubik } from "next/font/google";
 import "./globals.css";
@@ -53,6 +54,9 @@ export default function RootLayout({
         {children}
         <StickyWhatsApp />
       </body>
+      {GA_MEASUREMENT_ID ? (
+        <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
+      ) : null}
     </html>
   );
 }

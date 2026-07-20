@@ -11,6 +11,7 @@
     "export:blog": "python3 scripts/migrate/export-blog-mdx.py"
   },
   "dependencies": {
+    "@next/third-parties": "^15.5.20",
     "framer-motion": "^11.18.2",
     "gray-matter": "^4.0.3",
     "next": "^15.1.0",
