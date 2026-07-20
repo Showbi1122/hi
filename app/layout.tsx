@@ -42,6 +42,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  if (process.env.NODE_ENV === "development") {
+    // console.warn survives next.config compiler.removeConsole (log is stripped)
+    console.warn(
+      "[GA] NEXT_PUBLIC_GA_MEASUREMENT_ID →",
+      GA_MEASUREMENT_ID || "(empty)",
+    );
+    console.warn(
+      "[GA] raw process.env →",
+      process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "(empty)",
+    );
+  }
+
   return (
     <html lang="en" dir="ltr">
       <body className={`${rubik.variable} ${oswald.variable} font-body`}>
@@ -53,10 +65,10 @@ export default function RootLayout({
         </a>
         {children}
         <StickyWhatsApp />
+        {GA_MEASUREMENT_ID ? (
+          <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
+        ) : null}
       </body>
-      {GA_MEASUREMENT_ID ? (
-        <GoogleAnalytics gaId={GA_MEASUREMENT_ID} />
-      ) : null}
     </html>
   );
 }
