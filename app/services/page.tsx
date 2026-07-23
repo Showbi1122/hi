@@ -162,7 +162,7 @@ export default function ServicesPage() {
                         <img src={service.icon} alt="" width={90} height={90} />
                       </div>
                       <div className="service-text">
-                        <h4>{service.title}</h4>
+                        <h3>{service.title}</h3>
                         <p>{service.description}</p>
                       </div>
                       {service.tags.length > 0 ? (
@@ -225,11 +225,11 @@ export default function ServicesPage() {
                   style={{ marginBottom: 30 }}
                 >
                   <div className="skill-box service-detail-box">
-                    <h5>
+                    <h3>
                       <Link href={`/services/${service.slug}`}>
                         {service.title}
                       </Link>
-                    </h5>
+                    </h3>
                     <ul className="service-detail-list">
                       {service.details.map((detail) => (
                         <li key={detail.title}>
@@ -276,7 +276,7 @@ export default function ServicesPage() {
               {processSteps.map((step) => (
                 <div key={step.step} className="skill-box process-step">
                   <small>{step.step}</small>
-                  <h5>{step.title}</h5>
+                  <h3>{step.title}</h3>
                   <p>{step.description}</p>
                 </div>
               ))}

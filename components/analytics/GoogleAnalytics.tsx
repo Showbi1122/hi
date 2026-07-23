@@ -5,8 +5,9 @@ type GoogleAnalyticsProps = {
 };
 
 /**
- * GA4 via next/script (beforeInteractive) so the tag is present in the
- * initial HTML — View Source / Tag Assistant can see googletagmanager + the ID.
+ * GA4 via next/script afterInteractive so gtag does not compete with LCP.
+ * Tag still loads on every page; dataLayer is defined as soon as the init
+ * script runs after hydration.
  */
 export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
   if (!gaId) return null;
@@ -15,9 +16,9 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-        strategy="beforeInteractive"
+        strategy="afterInteractive"
       />
-      <Script id="ga-gtag-init" strategy="beforeInteractive">
+      <Script id="ga-gtag-init" strategy="afterInteractive">
         {`
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}

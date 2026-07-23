@@ -94,7 +94,10 @@ export function getAllBlogPosts(): BlogPostMeta[] {
       const { content: _, ...meta } = post;
       return meta;
     })
-    .sort((a, b) => a.headline.localeCompare(b.headline));
+    .sort(
+      (a, b) =>
+        new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime(),
+    );
 }
 
 export function getBlogPost(slug: string): BlogPost | null {
@@ -111,11 +114,10 @@ export function getAllBlogSlugs(): string[] {
     .map((file) => file.replace(/\.mdx$/, ""));
 }
 
-export const featuredBlogSlugs = [
-  "ssg-vs-ssr-isr-csr-nextjs",
-  "why-every-business-needs-modern-website",
-  "react-vs-nextjs",
-];
+/** Newest posts first for homepage / previews. */
+export function getLatestBlogPosts(limit = 3): BlogPostMeta[] {
+  return getAllBlogPosts().slice(0, limit);
+}
 
 export function toBlogCardData(post: BlogPostMeta): BlogCardData {
   return {

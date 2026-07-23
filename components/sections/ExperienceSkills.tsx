@@ -48,7 +48,7 @@ export function ExperienceSkills() {
               <Reveal delay={i * 0.08}>
                 <div className="skill-box">
                   <small>{box.small}</small>
-                  <h5>{box.title}</h5>
+                  <h3>{box.title}</h3>
                   <p>{box.body}</p>
                 </div>
               </Reveal>

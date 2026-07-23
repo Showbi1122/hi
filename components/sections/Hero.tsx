@@ -1,25 +1,11 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const fadeDown = {
-  hidden: { opacity: 0, y: -36 },
-  show: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.15 + i * 0.15,
-      duration: 0.9,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  }),
-};
-
+/**
+ * Server-rendered hero: the H1 is the LCP element on mobile PSI.
+ * Keep it visible in the first HTML paint (no opacity:0 / JS animation gate).
+ */
 export function Hero() {
-  const reduce = useReducedMotion();
-
   return (
     <div className="welcome-area-wrap welcome__wrap1" id="hero">
       <div
@@ -31,39 +17,17 @@ export function Hero() {
           <div className="row">
             <div className="col-lg-7">
               <div className="wlc-title white">
-                <motion.h1
-                  id="hero-title"
-                  itemProp="name"
-                  custom={0}
-                  variants={fadeDown}
-                  initial={reduce ? false : "hidden"}
-                  animate="show"
-                  className="fadeInDown animated"
-                >
+                <h1 id="hero-title" itemProp="name">
                   <span>Apps, POS &amp; SaaS</span> built for real businesses
-                </motion.h1>
-                <motion.p
-                  itemProp="description"
-                  custom={1}
-                  variants={fadeDown}
-                  initial={reduce ? false : "hidden"}
-                  animate="show"
-                  className="fadeInDown animated"
-                >
+                </h1>
+                <p itemProp="description">
                   I help startups and businesses launch fast, SEO-ready websites and custom
-                  software — from company websites to POS systems, CRM tools, and SaaS
+                  software: from company websites to POS systems, CRM tools, and SaaS
                   products.
-                </motion.p>
-                <motion.div
-                  custom={2}
-                  variants={fadeDown}
-                  initial={reduce ? false : "hidden"}
-                  animate="show"
-                >
-                  <Link href="/contact" className="cbtn cbnt1 fadeInDown animated">
-                    Getting Started <i className="cbtn-ico">→</i>
-                  </Link>
-                </motion.div>
+                </p>
+                <Link href="/contact" className="cbtn cbnt1">
+                  Getting Started <i className="cbtn-ico">→</i>
+                </Link>
               </div>
             </div>
           </div>
@@ -76,9 +40,12 @@ export function Hero() {
             height={1013}
             priority
             fetchPriority="high"
+            sizes="(max-width: 991px) 0px, min(42vw, 520px)"
             itemProp="image"
           />
-          <h1 className="wlc-filltext">MTS</h1>
+          <p className="wlc-filltext" aria-hidden="true">
+            MTS
+          </p>
         </div>
       </div>
     </div>

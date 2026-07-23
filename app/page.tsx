@@ -10,7 +10,7 @@ import { TopBar } from "@/components/layout/TopBar";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Reveal } from "@/components/ui/Reveal";
-import { featuredBlogSlugs, getAllBlogPosts, toBlogCardData } from "@/lib/blog";
+import { getLatestBlogPosts, toBlogCardData } from "@/lib/blog";
 import { homepageFaqs } from "@/data/faqs";
 import { geoPages } from "@/data/geo";
 import { processSteps, valueProps } from "@/data/home";
@@ -35,10 +35,7 @@ export const metadata = createPageMetadata({
 });
 
 export default function HomePage() {
-  const allPosts = getAllBlogPosts();
-  const featuredPosts = featuredBlogSlugs
-    .map((slug) => allPosts.find((post) => post.slug === slug))
-    .filter(Boolean);
+  const featuredPosts = getLatestBlogPosts(3);
   const featuredServices = services.slice(0, 3);
 
   return (
@@ -70,7 +67,7 @@ export default function HomePage() {
                   <p>
                     From company websites and e-commerce stores to POS systems and SaaS MVPs —
                     each service is built for speed, SEO, and conversions.{" "}
-                    <Link href="/services" className="text-[#08d665]">
+                    <Link href="/services" className="inline-link">
                       View all services
                     </Link>
                     .
@@ -118,7 +115,7 @@ export default function HomePage() {
                 <Reveal key={step.step} delay={i * 0.07}>
                   <div className="skill-box process-step">
                     <small>{step.step}</small>
-                    <h5>{step.title}</h5>
+                    <h3>{step.title}</h3>
                     <p>{step.description}</p>
                   </div>
                 </Reveal>
@@ -144,7 +141,7 @@ export default function HomePage() {
                 <div className="info-content">
                   <p>
                     See what I&apos;ve built for businesses like yours.{" "}
-                    <Link href="/projects" className="text-[#08d665]">
+                    <Link href="/projects" className="inline-link">
                       View all projects
                     </Link>
                     .
@@ -209,7 +206,7 @@ export default function HomePage() {
                       className="advantage-icon"
                       aria-hidden
                     />
-                    <h4>{item.title}</h4>
+                    <h3>{item.title}</h3>
                     <p>{item.description}</p>
                   </div>
                 </Reveal>
@@ -268,7 +265,7 @@ export default function HomePage() {
                 <div className="info-content">
                   <p>
                     Longer guides when a topic deserves more than a tweet.{" "}
-                    <Link href="/blog" className="text-[#08d665]">
+                    <Link href="/blog" className="inline-link">
                       All posts
                     </Link>
                     .

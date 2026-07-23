@@ -25,7 +25,7 @@ export function ServiceCard({ service, index = 0, featured }: ServiceCardProps) 
             <img src={service.icon} alt="" width={90} height={90} />
           </div>
           <div className="service-text">
-            <h4>{service.title}</h4>
+            <h3>{service.title}</h3>
             <p>{service.description}</p>
           </div>
           <div className="circles-wrap" aria-hidden>

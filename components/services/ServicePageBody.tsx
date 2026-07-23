@@ -58,7 +58,7 @@ export function ServicePageBody({ page }: ServicePageBodyProps) {
           {page.process.map((step) => (
             <div key={step.step} className="skill-box process-step">
               <small>{step.step}</small>
-              <h5>{step.title}</h5>
+              <h3>{step.title}</h3>
               <p>{step.description}</p>
             </div>
           ))}

@@ -241,7 +241,7 @@ export default function AboutPage() {
                   style={{ marginBottom: 24 }}
                 >
                   <div className="skill-box about-principle-card">
-                    <h5>{item.title}</h5>
+                    <h3>{item.title}</h3>
                     <p>{item.description}</p>
                   </div>
                 </div>
@@ -290,7 +290,7 @@ export default function AboutPage() {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={item.icon} alt="" width={48} height={48} />
                     </div>
-                    <h5>{item.title}</h5>
+                    <h3>{item.title}</h3>
                     <p>{item.description}</p>
                   </div>
                 </div>
@@ -329,7 +329,7 @@ export default function AboutPage() {
                   style={{ marginBottom: 24 }}
                 >
                   <div className="skill-box">
-                    <h5>{market.title}</h5>
+                    <h3>{market.title}</h3>
                     <p>{market.description}</p>
                   </div>
                 </div>
@@ -402,7 +402,7 @@ export default function AboutPage() {
               {processSteps.map((step) => (
                 <div key={step.step} className="skill-box process-step">
                   <small>{step.step}</small>
-                  <h5>{step.title}</h5>
+                  <h3>{step.title}</h3>
                   <p>{step.description}</p>
                 </div>
               ))}

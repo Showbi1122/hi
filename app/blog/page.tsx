@@ -75,10 +75,7 @@ const socialTiles: { label: string; href: string; icon: ReactNode }[] = [
 ];
 
 export default function BlogIndexPage() {
-  const posts = getAllBlogPosts().sort(
-    (a, b) =>
-      new Date(b.datePublished).getTime() - new Date(a.datePublished).getTime(),
-  );
+  const posts = getAllBlogPosts();
 
   const categories = Object.entries(
     posts.reduce<Record<string, number>>((acc, post) => {

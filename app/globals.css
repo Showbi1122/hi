@@ -28,19 +28,19 @@
   }
 
   .cbtn {
-    @apply relative inline-flex items-center gap-0 overflow-hidden rounded-sm border border-transparent bg-gold px-6 py-[13px] pr-[70px] text-sm font-medium uppercase tracking-wide text-white transition-all duration-300;
+    @apply relative inline-flex items-center gap-0 overflow-hidden rounded-sm border border-transparent bg-gold px-6 py-[13px] pr-[70px] text-sm font-semibold uppercase tracking-wide text-bg transition-all duration-300;
   }
 
   .cbtn-icon {
-    @apply absolute right-[15px] top-1/2 flex h-[30px] w-[30px] -translate-y-1/2 items-center justify-center rounded-sm bg-white text-base text-gold transition-colors duration-300;
+    @apply absolute right-[15px] top-1/2 flex h-[30px] w-[30px] -translate-y-1/2 items-center justify-center rounded-sm bg-bg text-base text-gold transition-colors duration-300;
   }
 
   .cbtn:hover {
-    @apply border-gold-light bg-transparent text-gold-light;
+    @apply border-gold bg-transparent text-[#7CFFB2];
   }
 
   .cbtn:hover .cbtn-icon {
-    @apply bg-gold text-white;
+    @apply bg-gold text-bg;
   }
 
   .editorial-block {

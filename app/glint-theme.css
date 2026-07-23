@@ -529,7 +529,8 @@ a.up-btn:hover {
   max-width: 520px;
 }
 
-h1.wlc-filltext {
+h1.wlc-filltext,
+.wlc-filltext {
   position: absolute;
   top: 15%;
   font-size: 200px;
@@ -590,7 +591,8 @@ h1.wlc-filltext {
     font-size: 36px;
     line-height: 46px;
   }
-  h1.wlc-filltext { font-size: 80px; }
+  h1.wlc-filltext,
+  .wlc-filltext { font-size: 80px; }
 }
 
 /* ===== Buttons ===== */
@@ -610,7 +612,8 @@ button.cbtn.cbnt1 {
   background: #08d665;
   padding-right: 70px;
   border: 1px solid transparent;
-  color: #fff;
+  color: #0b0d0e;
+  font-weight: 600;
   transition: all 0.3s;
 }
 
@@ -625,7 +628,7 @@ button.cbtn.cbnt1 .cbtn-ico {
   text-align: center;
   line-height: 30px;
   font-size: 20px;
-  background: #fff;
+  background: #0b0d0e;
   color: #08d665;
   border-radius: 4px;
   margin-top: -15px;
@@ -634,15 +637,15 @@ button.cbtn.cbnt1 .cbtn-ico {
 
 a.cbtn.cbnt1:hover,
 button.cbtn.cbnt1:hover {
-  border-color: #22cd6f;
+  border-color: #08d665;
   background: transparent;
-  color: #22cd6f;
+  color: #7CFFB2;
 }
 
 a.cbtn.cbnt1:hover .cbtn-ico,
 button.cbtn.cbnt1:hover .cbtn-ico {
   background: #08d665;
-  color: #fff;
+  color: #0b0d0e;
 }
 
 /* ===== Welcome / Hero ===== */
@@ -692,7 +695,8 @@ button.cbtn.cbnt1:hover .cbtn-ico {
   max-width: 34rem;
 }
 
-h1.wlc-filltext {
+h1.wlc-filltext,
+.wlc-filltext {
   position: absolute;
   top: 15%;
   font-size: clamp(5rem, 18vw, 200px);
@@ -798,6 +802,19 @@ h1.wlc-filltext {
   line-height: 1.7;
 }
 
+.info-content a,
+.inline-link {
+  color: #7CFFB2;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 500;
+}
+
+.info-content a:hover,
+.inline-link:hover {
+  color: #08d665;
+}
+
 /* ===== About ===== */
 .about-area1 {
   background-image: url(/assets/ui/about-bg.png);
@@ -867,7 +884,8 @@ h1.wlc-filltext {
   font-weight: 500;
 }
 
-.skill-box h5 {
+.skill-box h5,
+.skill-box h3 {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 600;
@@ -958,7 +976,8 @@ h1.wlc-filltext {
   margin: 30px 0 0;
 }
 
-.service-text h4 {
+.service-text h4,
+.service-text h3 {
   font-size: 24px;
   text-transform: uppercase;
   color: #22cd6f;
@@ -969,6 +988,8 @@ h1.wlc-filltext {
 
 .single-service:hover .service-text h4,
 .single-service.active .service-text h4,
+.single-service:hover .service-text h3,
+.single-service.active .service-text h3,
 .single-service:hover .service-text p,
 .single-service.active .service-text p {
   color: #fff;
@@ -1172,7 +1193,8 @@ span.g-circle.circle-4 {
   height: 48px;
 }
 
-.advantage-item h4 {
+.advantage-item h4,
+.advantage-item h3 {
   color: #fff;
   font-family: var(--font-oswald), Oswald, sans-serif;
   text-transform: uppercase;
@@ -1305,9 +1327,10 @@ a.readmore-btn:hover .arrow {
 a.subscribe-btn,
 button.subscribe-btn {
   padding: 15px 60px 15px 30px;
-  background: #22cd6f;
+  background: #08d665;
   border-radius: 5px;
-  color: #fff;
+  color: #0b0d0e;
+  font-weight: 600;
   text-transform: uppercase;
   position: relative;
   z-index: 2;
@@ -1322,8 +1345,8 @@ button.subscribe-btn {
 
 a.subscribe-btn .cbtn-ico,
 button.subscribe-btn .cbtn-ico {
-  background: #fff;
-  color: #22cd6f;
+  background: #0b0d0e;
+  color: #08d665;
   height: 35px;
   width: 35px;
   text-align: center;
@@ -1339,15 +1362,15 @@ button.subscribe-btn .cbtn-ico {
 
 a.subscribe-btn:hover,
 button.subscribe-btn:hover {
-  border-color: #22cd6f;
+  border-color: #08d665;
   background: transparent;
-  color: #22cd6f;
+  color: #7CFFB2;
 }
 
 a.subscribe-btn:hover .cbtn-ico,
 button.subscribe-btn:hover .cbtn-ico {
-  background: #22cd6f;
-  color: #fff;
+  background: #08d665;
+  color: #0b0d0e;
 }
 
 button.subscribe-btn:disabled {
@@ -1444,7 +1467,9 @@ button.subscribe-btn:disabled {
 }
 
 .process-step.skill-box h5,
-.skill-box.process-step h5 {
+.skill-box.process-step h5,
+.process-step.skill-box h3,
+.skill-box.process-step h3 {
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   line-height: 1.25;
   margin: 14px 0 12px;
@@ -1705,8 +1730,10 @@ button.subscribe-btn:disabled {
 }
 
 .primery-info-content a {
-  color: #06a950;
+  color: #067a3d;
   text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
 }
 
 .service-area.service-primery {
@@ -1733,7 +1760,8 @@ button.subscribe-btn:disabled {
   border: 1px solid #f0f0f0;
 }
 
-.service-primery .single-service.pricing2 .service-text h4 {
+.service-primery .single-service.pricing2 .service-text h4,
+.service-primery .single-service.pricing2 .service-text h3 {
   color: #32383a;
 }
 
@@ -1749,6 +1777,8 @@ button.subscribe-btn:disabled {
 
 .service-primery .single-service.active .service-text h4,
 .service-primery .single-service:hover .service-text h4,
+.service-primery .single-service.active .service-text h3,
+.service-primery .single-service:hover .service-text h3,
 .service-primery .single-service.active .service-text p,
 .service-primery .single-service:hover .service-text p {
   color: #fff;
@@ -1858,7 +1888,8 @@ button.subscribe-btn:disabled {
   line-height: 1.5;
 }
 
-.about-principle-card h5 {
+.about-principle-card h5,
+.about-principle-card h3 {
   font-size: 18px;
 }
 
@@ -1930,16 +1961,19 @@ button.subscribe-btn:disabled {
   text-align: left;
 }
 
-.service-detail-box h5 {
+.service-detail-box h5,
+.service-detail-box h3 {
   margin-bottom: 22px;
 }
 
-.service-detail-box h5 a {
+.service-detail-box h5 a,
+.service-detail-box h3 a {
   color: inherit;
   transition: color 0.25s;
 }
 
-.service-detail-box h5 a:hover {
+.service-detail-box h5 a:hover,
+.service-detail-box h3 a:hover {
   color: #08d665;
 }
 
