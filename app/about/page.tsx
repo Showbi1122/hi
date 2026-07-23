@@ -1,11 +1,21 @@
 import { ResumeDownloadButton } from "@/components/analytics/ResumeDownloadButton";
 import { TrackedLink } from "@/components/analytics/TrackedLink";
+import { FaqList } from "@/components/content/FaqList";
 import { InnerPageHero } from "@/components/layout/InnerPageHero";
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { TopBar } from "@/components/layout/TopBar";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { defaultBreadcrumbSchema } from "@/components/layout/ContentPageLayout";
+import { ExperienceSkills } from "@/components/sections/ExperienceSkills";
+import {
+  aboutFaqs,
+  aboutMarkets,
+  aboutPrinciples,
+  aboutStack,
+  aboutStats,
+} from "@/data/about";
+import { processSteps, valueProps } from "@/data/home";
 import { projects } from "@/data/projects";
 import { services } from "@/data/services";
 import { createPageMetadata } from "@/lib/metadata";
@@ -14,6 +24,7 @@ import {
   GITHUB_URL,
   INSTAGRAM_URL,
   LINKEDIN_URL,
+  SITE_URL,
   WHATSAPP_LINK,
 } from "@/lib/site";
 import Image from "next/image";
@@ -23,7 +34,7 @@ export const metadata = createPageMetadata({
   title:
     "About Malik Taleeb Shahbaz | Software Developer Pakistan | Web Developer Abbottabad",
   description:
-    "Meet Malik Taleeb Shahbaz — software developer and web developer in Abbottabad, Pakistan. Custom software, POS systems, React, Next.js, SaaS, and 15+ websites delivered for global clients.",
+    "Meet Malik Taleeb Shahbaz, software developer and web developer in Abbottabad, Pakistan. Custom software, POS systems, React, Next.js, SaaS, and 15+ websites delivered for global clients.",
   path: "/about",
   keywords: KEYWORDS.about,
   imageAlt: "Malik Taleeb Shahbaz, software developer and web developer in Pakistan",
@@ -89,12 +100,27 @@ export default function AboutPage() {
                 "Web Developer",
                 "Full Stack Developer",
               ],
-              url: "https://taleeb-shahbaz.vercel.app/about",
-              image: "https://taleeb-shahbaz.vercel.app/assets/home/taleeb.webp",
-              sameAs: [
-                "https://github.com/mtaleebshahbaz",
-                "https://www.linkedin.com/in/malik-taleeb-shahbaz-138769342",
-              ],
+              url: `${SITE_URL}/about`,
+              image: `${SITE_URL}/assets/home/taleeb.webp`,
+              description:
+                "Full stack software developer in Abbottabad, Pakistan building custom websites, POS systems, SaaS apps, and SEO-ready web products for global clients.",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Abbottabad",
+                addressCountry: "PK",
+              },
+              sameAs: [GITHUB_URL, LINKEDIN_URL, INSTAGRAM_URL],
+            },
+            {
+              "@type": "FAQPage",
+              mainEntity: aboutFaqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: faq.answer,
+                },
+              })),
             },
           ],
         }}
@@ -105,7 +131,6 @@ export default function AboutPage() {
       <main id="main-content">
         <InnerPageHero title="About Us" current="About" watermark="About" />
 
-        {/* About block — Glint about-area-primery */}
         <section className="about-area about-area-primery section-padding" id="about">
           <div className="glint-container">
             <div className="row items-center">
@@ -121,57 +146,326 @@ export default function AboutPage() {
               <div className="col-lg-6 offset-lg-1">
                 <div className="primery-heading">
                   <strong className="filltext">About us</strong>
+                  <small>WHO I AM</small>
                   <h2>
                     Software developer &amp; web developer who builds products that{" "}
                     <span>convert</span>
                   </h2>
                   <div className="space-20" />
                   <p>
-                    I&apos;m Malik Taleeb Shahbaz — a full stack software developer in
+                    I&apos;m Malik Taleeb Shahbaz, a full stack software developer in
                     Abbottabad, Pakistan. I build custom websites, POS systems, SaaS
                     products, and business software for startups and companies that need
-                    fast, SEO-ready solutions.
+                    fast, SEO-ready solutions without agency overhead.
+                  </p>
+                  <p>
+                    Most of my work is remote. Founders, agencies, and service businesses
+                    in the US, UK, Gulf, Australia, Europe, and Pakistan hire me when they
+                    want one person who can own design-in-code, development, launch, and
+                    the boring but important details: forms, analytics, schema, and mobile
+                    performance.
                   </p>
                   <p>
                     <strong>2+ years</strong> shipping client projects,{" "}
-                    <strong>15+ websites</strong> delivered, and hands-on work at Nexelix
-                    (current) and 247Marketers. Remote clients worldwide.
+                    <strong>15+ websites</strong> delivered, and hands-on delivery at
+                    Nexelix (current) and earlier at 247Marketers. I care less about flashy
+                    demos and more about sites and apps that still make sense six months
+                    after launch.
                   </p>
                   <div className="space-40" />
-                  <Link href="/contact" className="cbtn cbnt1">
-                    Hire Me <i className="cbtn-ico">→</i>
-                  </Link>
+                  <div className="cta-form" style={{ gap: 14 }}>
+                    <Link href="/contact" className="cbtn cbnt1">
+                      Hire Me <i className="cbtn-ico">→</i>
+                    </Link>
+                    <Link href="/services" className="subscribe-btn">
+                      View services <i className="cbtn-ico">→</i>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* 3 service cards — Glint service-primery */}
-        <section className="service-area service-primery padding-top padding-bottom" id="service">
+        <section className="about-stats-area" aria-label="Highlights">
           <div className="glint-container">
+            <div className="about-stats-grid">
+              {aboutStats.map((stat) => (
+                <div key={stat.label} className="about-stat-card">
+                  <strong>{stat.value}</strong>
+                  <span>{stat.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="section-padding"
+          id="story"
+          style={{ background: "#0b0d0e" }}
+        >
+          <div className="glint-container">
+            <div className="row items-center">
+              <div className="col-lg-6">
+                <div className="heading white">
+                  <strong className="filltext">story</strong>
+                  <small>HOW I WORK</small>
+                  <h2>
+                    Practical builds, <span>honest scope</span>
+                  </h2>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="info-content">
+                  <p>
+                    I started by shipping marketing sites and grew into full product work:
+                    dashboards, billing-ready SaaS pieces, and industry tools. That mix
+                    keeps me honest. A homepage still needs to convert. An admin screen
+                    still needs to be usable at 11 p.m. on a tired phone.
+                  </p>
+                  <p>
+                    When a template is enough, I say so. When paid ads deserve a dedicated
+                    landing page instead of a twelve-page redesign, I say that too. The
+                    goal is the right next step for your business, not the largest invoice.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="space-60" />
+            <div className="row">
+              {aboutPrinciples.map((item) => (
+                <div
+                  key={item.title}
+                  className="col-md-6 col-lg-3"
+                  style={{ marginBottom: 24 }}
+                >
+                  <div className="skill-box about-principle-card">
+                    <h5>{item.title}</h5>
+                    <p>{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <ExperienceSkills />
+
+        <section
+          className="section-padding"
+          id="values"
+          style={{ background: "#131617" }}
+        >
+          <div className="glint-container">
+            <div className="row items-center">
+              <div className="col-lg-6">
+                <div className="heading white">
+                  <strong className="filltext">promise</strong>
+                  <small>WHAT YOU GET</small>
+                  <h2>
+                    Why clients <span>stick</span>
+                  </h2>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="info-content">
+                  <p>
+                    Same standards I use on the homepage value props: results, speed,
+                    mobile quality, and direct communication.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="space-60" />
+            <div className="row">
+              {valueProps.map((item) => (
+                <div
+                  key={item.title}
+                  className="col-md-6 col-lg-3"
+                  style={{ marginBottom: 24 }}
+                >
+                  <div className="skill-box">
+                    <div className="service-icon" aria-hidden style={{ marginBottom: 16 }}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={item.icon} alt="" width={48} height={48} />
+                    </div>
+                    <h5>{item.title}</h5>
+                    <p>{item.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section-padding" id="who-i-help">
+          <div className="glint-container">
+            <div className="row items-center">
+              <div className="col-lg-6">
+                <div className="heading white">
+                  <strong className="filltext">clients</strong>
+                  <small>WHO I HELP</small>
+                  <h2>
+                    Built for real <span>businesses</span>
+                  </h2>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="info-content">
+                  <p>
+                    If you need a partner who understands both marketing sites and
+                    operational software, we will probably work well together.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="space-60" />
+            <div className="row">
+              {aboutMarkets.map((market) => (
+                <div
+                  key={market.title}
+                  className="col-md-6"
+                  style={{ marginBottom: 24 }}
+                >
+                  <div className="skill-box">
+                    <h5>{market.title}</h5>
+                    <p>{market.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="section-padding"
+          id="stack"
+          style={{ background: "#0b0d0e" }}
+        >
+          <div className="glint-container">
+            <div className="row items-center">
+              <div className="col-lg-6">
+                <div className="heading white">
+                  <strong className="filltext">stack</strong>
+                  <small>TOOLS</small>
+                  <h2>
+                    Technologies I <span>ship with</span>
+                  </h2>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="info-content">
+                  <p>
+                    Stack choices follow the job. Marketing and SEO-heavy sites lean
+                    Next.js. Logged-in tools lean React. APIs and data stay pragmatic.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="space-40" />
+            <ul className="about-stack-list">
+              {aboutStack.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section
+          className="section-padding"
+          id="process"
+          style={{ background: "#131617" }}
+        >
+          <div className="glint-container">
+            <div className="row items-center">
+              <div className="col-lg-6">
+                <div className="heading white">
+                  <strong className="filltext">process</strong>
+                  <small>HOW PROJECTS RUN</small>
+                  <h2>
+                    Simple process, <span>zero stress</span>
+                  </h2>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="info-content">
+                  <p>
+                    From first message to live launch, here is the rhythm most projects
+                    follow.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="space-60" />
+            <div className="process-row">
+              {processSteps.map((step) => (
+                <div key={step.step} className="skill-box process-step">
+                  <small>{step.step}</small>
+                  <h5>{step.title}</h5>
+                  <p>{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="service-area service-primery padding-top padding-bottom"
+          id="service"
+        >
+          <div className="glint-container">
+            <div className="row items-center">
+              <div className="col-lg-6">
+                <div className="primery-heading">
+                  <strong className="filltext">services</strong>
+                  <small>WHAT I OFFER</small>
+                  <h2>
+                    Services with <span>full pages</span>
+                  </h2>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="primery-info-content">
+                  <p>
+                    Each highlight below opens a dedicated service page with process,
+                    use cases, and FAQs.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="space-60" />
             <div className="row">
               {highlightServices.map((service, index) => (
                 <div key={service.id} className="col-lg-4" style={{ marginBottom: 40 }}>
                   <article
                     className={`single-service pricing2 ${index === 1 ? "active" : ""}`}
                   >
-                    <div className="service-icon" aria-hidden>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={service.icon} alt="" width={90} height={90} />
-                    </div>
-                    <div className="service-text">
-                      <h4>{service.title}</h4>
-                      <p>{service.description}</p>
-                    </div>
-                    <div className="circles-wrap" aria-hidden>
-                      <div className="circles">
-                        <span className="g-circle circle-1" />
-                        <span className="g-circle circle-2" />
-                        <span className="g-circle circle-3" />
-                        <span className="g-circle circle-4" />
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="service-card-link"
+                      aria-label={`View ${service.title}`}
+                    >
+                      <div className="service-icon" aria-hidden>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={service.icon} alt="" width={90} height={90} />
                       </div>
-                    </div>
+                      <div className="service-text">
+                        <h4>{service.title}</h4>
+                        <p>{service.description}</p>
+                      </div>
+                      <span className="service-card-cta">
+                        View details <i className="cbtn-ico">→</i>
+                      </span>
+                      <div className="circles-wrap" aria-hidden>
+                        <div className="circles">
+                          <span className="g-circle circle-1" />
+                          <span className="g-circle circle-2" />
+                          <span className="g-circle circle-3" />
+                          <span className="g-circle circle-4" />
+                        </div>
+                      </div>
+                    </Link>
                   </article>
                 </div>
               ))}
@@ -184,16 +478,18 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Projects — Glint project-area-primery */}
-        <section className="project-area project-area-primery section-padding" id="portfolio">
+        <section
+          className="project-area project-area-primery section-padding"
+          id="portfolio"
+        >
           <div className="glint-container">
             <div className="row items-center">
               <div className="col-lg-6">
                 <div className="primery-heading">
                   <strong className="filltext">our projects</strong>
-                  <small>WORKING PROCESS</small>
+                  <small>SELECTED WORK</small>
                   <h2>
-                    latest working <span>project</span>
+                    Latest working <span>project</span>
                   </h2>
                 </div>
               </div>
@@ -230,8 +526,44 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* CTA — Glint newsletter-style hire strip */}
-        <section className="cta-area padding-top padding-bottom cta-primery" id="contact-cta">
+        <section
+          className="section-padding"
+          id="faq"
+          style={{ background: "#0b0d0e" }}
+        >
+          <div className="glint-container">
+            <div className="row items-center">
+              <div className="col-lg-6">
+                <div className="heading white">
+                  <strong className="filltext">faq</strong>
+                  <small>QUESTIONS</small>
+                  <h2>
+                    About working <span>together</span>
+                  </h2>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <div className="info-content">
+                  <p>
+                    Quick answers before you send a message. More project FAQs live on
+                    each service page.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="space-60" />
+            <div className="row">
+              <div className="col-lg-10 m-auto">
+                <FaqList items={aboutFaqs} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          className="cta-area padding-top padding-bottom cta-primery"
+          id="contact-cta"
+        >
           <div className="glint-container">
             <div className="row">
               <div className="col-lg-6 m-auto text-center">
@@ -241,6 +573,11 @@ export default function AboutPage() {
                   <h2>
                     Ready to hire a <span>web developer?</span>
                   </h2>
+                  <div className="space-20" />
+                  <p style={{ color: "#999", maxWidth: 480, margin: "0 auto" }}>
+                    Tell me what you are building, your timeline, and any live URL. I will
+                    reply with clear next steps.
+                  </p>
                 </div>
                 <div className="space-40" />
                 <div className="cta-form cta-form-centered">
@@ -268,7 +605,11 @@ export default function AboutPage() {
                   <div key={s.href} className="col-social">
                     <div className="single-social">
                       <div className="sinlge-social-hover">
-                        <TrackedLink href={s.href} location="about_social" aria-label={s.label}>
+                        <TrackedLink
+                          href={s.href}
+                          location="about_social"
+                          aria-label={s.label}
+                        >
                           <span className="single-social-icon">{s.icon}</span>
                           <p className="single-soicial-text">
                             Join on

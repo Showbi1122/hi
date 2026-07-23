@@ -33,7 +33,10 @@ function FaqAnswer({ text }: { text: string }) {
   if (text.includes("custom websites")) {
     return (
       <>
-        <Link href="/services" className="text-[#08d665] hover:underline">
+        <Link
+          href="/services/custom-website-development"
+          className="text-[#08d665] hover:underline"
+        >
           Custom websites
         </Link>
         {text.replace(/^Custom websites,?\s*/i, ", ")}

@@ -1,5 +1,6 @@
 import { getAllBlogPosts } from "@/lib/blog";
 import { getAllGeoSlugs } from "@/data/geo";
+import { getAllServiceSlugs } from "@/data/services";
 import { SITE_URL } from "@/lib/site";
 import type { MetadataRoute } from "next";
 
@@ -44,5 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }));
 
-  return [...coreEntries, ...blogEntries, ...geoEntries];
+  const serviceEntries: SitemapEntry[] = getAllServiceSlugs().map((slug) => ({
+    url: `${SITE_URL}/services/${slug}`,
+    lastModified: buildDate,
+    changeFrequency: "monthly",
+    priority: 0.88,
+  }));
+
+  return [...coreEntries, ...serviceEntries, ...blogEntries, ...geoEntries];
 }

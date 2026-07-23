@@ -9,6 +9,19 @@ const blogSlugs = [
   "saas-development-guide",
   "lead-generation-website-tips",
   "ssg-vs-ssr-isr-csr-nextjs",
+  "vibe-coding-explained",
+  "landing-page-vs-full-website",
+];
+
+const serviceSlugs = [
+  "custom-website-development",
+  "saas-web-application-development",
+  "react-nextjs-development",
+  "landing-page-lead-generation",
+  "ai-website-automation",
+  "seo-website-development",
+  "ui-ux-web-design",
+  "website-maintenance-industry-sites",
 ];
 
 const geoSlugs = [
@@ -42,6 +55,11 @@ const redirects = [
   ...geoSlugs.map((slug) => ({
     source: `/geo/${slug}.html`,
     destination: `/geo/${slug}`,
+    permanent: true,
+  })),
+  ...serviceSlugs.map((slug) => ({
+    source: `/services/${slug}.html`,
+    destination: `/services/${slug}`,
     permanent: true,
   })),
 ];

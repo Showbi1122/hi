@@ -5,6 +5,7 @@ export type ServiceDetail = {
 
 export type Service = {
   id: string;
+  slug: string;
   icon: string;
   title: string;
   description: string;
@@ -15,10 +16,11 @@ export type Service = {
 export const services: Service[] = [
   {
     id: "service-custom-website",
+    slug: "custom-website-development",
     icon: "/assets/icons/services/website.svg",
     title: "Custom Website Development",
     description:
-      "Company and business website development — hand-coded sites that load fast on mobile, rank in search, and convert visitors into inquiries, with optional maintenance after launch.",
+      "Company and business website development: hand-coded sites that load fast on mobile, rank in search, and convert visitors into inquiries, with optional maintenance after launch.",
     tags: ["Business Sites", "Corporate", "Portfolio"],
     details: [
       {
@@ -44,10 +46,11 @@ export const services: Service[] = [
   },
   {
     id: "service-saas",
+    slug: "saas-web-application-development",
     icon: "/assets/icons/services/saas.svg",
     title: "SaaS & Web Application Development",
     description:
-      "Custom web applications and SaaS MVPs with auth, billing, and dashboards — API development and database design for founders who need paying users, not just a demo.",
+      "Custom web applications and SaaS MVPs with auth, billing, and dashboards: API development and database design for founders who need paying users, not just a demo.",
     tags: ["SaaS", "MVP", "Dashboards"],
     details: [
       {
@@ -74,6 +77,7 @@ export const services: Service[] = [
   },
   {
     id: "service-frontend",
+    slug: "react-nextjs-development",
     icon: "/assets/icons/services/react.svg",
     title: "React / Next.js Development",
     description:
@@ -99,6 +103,7 @@ export const services: Service[] = [
   },
   {
     id: "service-landing",
+    slug: "landing-page-lead-generation",
     icon: "/assets/icons/services/landing.svg",
     title: "Landing Page & Lead Generation Websites",
     description:
@@ -124,6 +129,7 @@ export const services: Service[] = [
   },
   {
     id: "service-ai",
+    slug: "ai-website-automation",
     icon: "/assets/icons/services/ai.svg",
     title: "AI Website & Automation Development",
     description:
@@ -149,6 +155,7 @@ export const services: Service[] = [
   },
   {
     id: "service-seo",
+    slug: "seo-website-development",
     icon: "/assets/icons/services/seo.svg",
     title: "SEO Optimized Website Development",
     description:
@@ -174,10 +181,11 @@ export const services: Service[] = [
   },
   {
     id: "service-uiux",
+    slug: "ui-ux-web-design",
     icon: "/assets/icons/services/design.svg",
     title: "UI/UX & Web Design Development",
     description:
-      "I design and code in the same pass, layout, typography, and interactions that match your brand without hiring two people.",
+      "I design and code in the same pass: layout, typography, and interactions that match your brand without hiring two people.",
     tags: ["UI/UX", "Web Design", "Responsive"],
     details: [
       {
@@ -194,10 +202,11 @@ export const services: Service[] = [
   },
   {
     id: "service-industry",
+    slug: "website-maintenance-industry-sites",
     icon: "/assets/icons/services/industry.svg",
     title: "Website Maintenance & Industry Sites",
     description:
-      "Website maintenance, redesign, and industry-specific builds — POS system development, school management systems, inventory tools, and CRM-style business software.",
+      "Website maintenance, redesign, and industry-specific builds: POS system development, school management systems, inventory tools, and CRM-style business software.",
     tags: ["POS Systems", "Education", "Maintenance"],
     details: [
       {
@@ -223,3 +232,11 @@ export const services: Service[] = [
     ],
   },
 ];
+
+export function getServiceBySlug(slug: string): Service | undefined {
+  return services.find((service) => service.slug === slug);
+}
+
+export function getAllServiceSlugs(): string[] {
+  return services.map((service) => service.slug);
+}

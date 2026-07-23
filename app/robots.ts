@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/blog/", "/geo/", "/assets/"],
+        allow: ["/", "/blog/", "/geo/", "/services/", "/assets/"],
       },
       { userAgent: "GPTBot", allow: "/" },
       { userAgent: "Google-Extended", allow: "/" },

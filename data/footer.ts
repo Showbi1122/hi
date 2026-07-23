@@ -21,11 +21,26 @@ export const footerColumns = [
   {
     title: "Services",
     links: [
-      { label: "Custom Websites", href: "/services#service-custom-website" },
-      { label: "SaaS Development", href: "/services#service-saas" },
-      { label: "POS & Business Software", href: "/services#service-industry" },
-      { label: "React & Next.js", href: "/services#service-frontend" },
-      { label: "SEO Websites", href: "/services#service-seo" },
+      {
+        label: "Custom Websites",
+        href: "/services/custom-website-development",
+      },
+      {
+        label: "SaaS Development",
+        href: "/services/saas-web-application-development",
+      },
+      {
+        label: "POS & Business Software",
+        href: "/services/website-maintenance-industry-sites",
+      },
+      {
+        label: "React & Next.js",
+        href: "/services/react-nextjs-development",
+      },
+      {
+        label: "SEO Websites",
+        href: "/services/seo-website-development",
+      },
     ],
   },
   {
@@ -37,8 +52,8 @@ export const footerColumns = [
       },
       { label: "React vs Next.js", href: "/blog/react-vs-nextjs" },
       {
-        label: "SSG vs SSR in Next.js",
-        href: "/blog/ssg-vs-ssr-isr-csr-nextjs",
+        label: "Landing Page vs Website",
+        href: "/blog/landing-page-vs-full-website",
       },
       { label: "All Articles", href: "/blog" },
     ],

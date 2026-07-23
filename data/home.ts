@@ -54,7 +54,7 @@ export const processSteps = [
 
 export const experienceItems = [
   {
-    period: "2024 — Present",
+    period: "2024 - Present",
     role: "Software Developer",
     company: "Nexelix",
     description:

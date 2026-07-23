@@ -95,7 +95,7 @@ export default function ServicesPage() {
                 "@type": "ListItem",
                 position: index + 1,
                 name: service.title,
-                url: `${SITE_URL}/services#${service.id}`,
+                url: `${SITE_URL}/services/${service.slug}`,
               })),
             },
           ],
@@ -128,9 +128,9 @@ export default function ServicesPage() {
                 <div className="primery-info-content">
                   <p>
                     From company websites and e-commerce stores to POS systems, CRM tools,
-                    and SaaS MVPs — each service is built for speed, SEO, and conversions.
-                    Not sure what you need?{" "}
-                    <Link href="/contact">Get in touch</Link> or read the{" "}
+                    and SaaS MVPs: each service is built for speed, SEO, and conversions.
+                    Open any card for a full page with scope, process, and FAQs. Not sure
+                    what you need? <Link href="/contact">Get in touch</Link> or read the{" "}
                     <Link href="/blog">blog</Link>.
                   </p>
                 </div>
@@ -152,29 +152,38 @@ export default function ServicesPage() {
                       index % 3 === 1 ? "active" : ""
                     }`}
                   >
-                    <div className="service-icon" aria-hidden>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={service.icon} alt="" width={90} height={90} />
-                    </div>
-                    <div className="service-text">
-                      <h4>{service.title}</h4>
-                      <p>{service.description}</p>
-                    </div>
-                    {service.tags.length > 0 ? (
-                      <div className="service-tags">
-                        {service.tags.map((tag) => (
-                          <span key={tag}>{tag}</span>
-                        ))}
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="service-card-link"
+                      aria-label={`View ${service.title}`}
+                    >
+                      <div className="service-icon" aria-hidden>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={service.icon} alt="" width={90} height={90} />
                       </div>
-                    ) : null}
-                    <div className="circles-wrap" aria-hidden>
-                      <div className="circles">
-                        <span className="g-circle circle-1" />
-                        <span className="g-circle circle-2" />
-                        <span className="g-circle circle-3" />
-                        <span className="g-circle circle-4" />
+                      <div className="service-text">
+                        <h4>{service.title}</h4>
+                        <p>{service.description}</p>
                       </div>
-                    </div>
+                      {service.tags.length > 0 ? (
+                        <div className="service-tags">
+                          {service.tags.map((tag) => (
+                            <span key={tag}>{tag}</span>
+                          ))}
+                        </div>
+                      ) : null}
+                      <span className="service-card-cta">
+                        View service details <i className="cbtn-ico">→</i>
+                      </span>
+                      <div className="circles-wrap" aria-hidden>
+                        <div className="circles">
+                          <span className="g-circle circle-1" />
+                          <span className="g-circle circle-2" />
+                          <span className="g-circle circle-3" />
+                          <span className="g-circle circle-4" />
+                        </div>
+                      </div>
+                    </Link>
                   </article>
                 </div>
               ))}
@@ -199,7 +208,8 @@ export default function ServicesPage() {
                 <div className="info-content">
                   <p>
                     Each offer below spells out who it&apos;s for, what ships, and the
-                    stack I use — so you know exactly what you&apos;re hiring.
+                    stack I use, so you know exactly what you&apos;re hiring. Open the
+                    full service page for process, use cases, and FAQs.
                   </p>
                 </div>
               </div>
@@ -216,7 +226,9 @@ export default function ServicesPage() {
                 >
                   <div className="skill-box service-detail-box">
                     <h5>
-                      <Link href={`#${service.id}`}>{service.title}</Link>
+                      <Link href={`/services/${service.slug}`}>
+                        {service.title}
+                      </Link>
                     </h5>
                     <ul className="service-detail-list">
                       {service.details.map((detail) => (
